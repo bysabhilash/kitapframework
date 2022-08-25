@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite for Chat" thread-count="4" verbose="5">
+	<parameter name="browserType" value="edge" />
+	<test name="smoke_test" preserve-order="true">
+		<classes>
+      <class name="com.kitap.testscripts.AccountCreationViaUI"/>
+      <class name="com.kitap.testscripts.ContactsCreationViaUI"/>
+      <class name="com.kitap.testscripts.LeadCreationViaUI"/>
+      <class name="com.kitap.testscripts.OpportunityCreationViaUI"/>
+      <class name="com.kitap.testscripts.BankingManagementCreationViaUI"/>
+      <class name="com.kitap.testscripts.CardPaymentMethodCreationViaUI"/>
+    </classes>
+	</test>
+</suite>
