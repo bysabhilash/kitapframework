@@ -1,4 +1,4 @@
-package KITAP;
+package kitap;
 
 import java.awt.Desktop.Action;    
 import java.util.ArrayList;
@@ -415,9 +415,9 @@ public class SFPageBase extends PageBase {
 		    we = driver.findElement(By.xpath("(//span[text()='" + label + "'])[2]//following::a[1]"));  
 		    we.click(); 		  
 		    waitForSFPagetoLoad();
-		    we2=driver.findElement(By.xpath("//a[text()='" + targetvalue + "']"));
-		    waitForSFPagetoLoad();
+		    we2=driver.findElement(By.xpath("(//a[text()='" + targetvalue + "'])[1]"));		   
 		    we2.click();
+		    waitForSFPagetoLoad();
 	        System.out.println("Sent values as " + targetvalue);
 	        
 	        
@@ -453,8 +453,6 @@ public class SFPageBase extends PageBase {
 			java.util.List<WebElement> ele = driver.findElements(By.xpath("//span"));
 			for (int i = 0; i < ele.size(); i++) {
 	
-				//System.out.println(ele.get(i).getText());
-	
 				try {
 					if (ele.get(i).getText().equalsIgnoreCase(label))
 						try {
@@ -462,7 +460,7 @@ public class SFPageBase extends PageBase {
 							we.sendKeys(targetvalue);
 							System.out.println("Sent values as " + targetvalue);
 						} catch (Exception e) {
-							we = driver.findElement(By.xpath("//span[text()='" + label + "']//following::input"));
+							we = driver.findElement(By.xpath("//span[text()='" + label + "']//following::textarea"));
 							we.sendKeys(targetvalue);
 						    waitForSFPagetoLoad();
 							we.sendKeys(Keys.ENTER);
@@ -497,8 +495,6 @@ public class SFPageBase extends PageBase {
 						System.out.println("Sent values as ");
 						return;					
 					}
-				
-					
 					    catch (Exception e) {
 						we = driver.findElement(By.xpath("//label//span[text()='" + label + "']//following::input[1]"));
 						we.click();

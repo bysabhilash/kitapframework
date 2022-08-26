@@ -1,7 +1,5 @@
 package com.kitap.pageobjects;
 
-import KITAP.SFPageBase;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.kitap.base.BaseTest;
+
+import kitap.SFPageBase;
 
 
 public class ReturnOrderListPage extends SFPageBase

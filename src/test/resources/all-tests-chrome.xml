@@ -10,6 +10,13 @@
       <class name="com.kitap.testscripts.OpportunityCreationViaUI"/>
       <class name="com.kitap.testscripts.BankingManagementCreationViaUI"/>
       <class name="com.kitap.testscripts.CardPaymentMethodCreationViaUI"/>
+       <class name="com.kitap.testscripts.WorkPlanTemplatesCreationViaUI"/>
+        <class name="com.kitap.testscripts.ContactRequestCreationViaUI"/>
+         <class name="com.kitap.testscripts.ImagesCreationViaUI"/>
+          <class name="com.kitap.testscripts.QuickTextCreationViaUI"/>
+           <class name="com.kitap.testscripts.EmailTemplatesCreationViaUI"/>
+            <class name="com.kitap.testscripts.WorkStepTemplatesCreationViaUI"/>
+             <class name="com.kitap.testscripts.ScoreCardsCreationViaUI"/>
     </classes>
 	</test>
 </suite>

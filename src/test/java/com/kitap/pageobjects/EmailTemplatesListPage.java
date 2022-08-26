@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import KITAP.SFPageBase;
+import kitap.SFPageBase;
 
 /*
  * @KTV1362
@@ -20,7 +20,7 @@ public class EmailTemplatesListPage extends SFPageBase {
     private WebElement ninesymbol;
 
     @FindBy(xpath="//b[normalize-space()=\"Email Templates\"]")
-    private WebElement clickemailtemplates;
+    private WebElement clickEmailTemplates;
 
     /*
      * @KTV1362
@@ -43,7 +43,7 @@ public class EmailTemplatesListPage extends SFPageBase {
      * @return values: opens email templates page
      */
 
-    public void enteremailtemplates(String label,String data) throws Exception {
+    public void enterEmailTemplates(String label,String data) throws Exception {
 
         try {
             setText(label, data);
@@ -60,9 +60,9 @@ public class EmailTemplatesListPage extends SFPageBase {
      * @Description: This method performs clicking on the email templates page
      * @return values: opens new email templates page
      */
-    public void clickemailtemplates() throws InterruptedException {
+    public void clickEmailTemplates() throws InterruptedException {
 
-        SFClick(clickemailtemplates);
+        SFClick(clickEmailTemplates);
         waitForSFPagetoLoad();
     }
 
@@ -74,7 +74,7 @@ public class EmailTemplatesListPage extends SFPageBase {
      * @return values: opens new email templates page
      */
 
-    public void clicknewemailtemplate(String label) throws Exception {
+    public void clickNewEmailTemplate(String label) throws Exception {
         try{
             clickSFbutton("New Email Template");
             waitForSFPagetoLoad();
@@ -92,7 +92,7 @@ public class EmailTemplatesListPage extends SFPageBase {
      * @Param: accepts two Param label and value as input
      * @return values: populates email template name
      */
-    public void setemailtemplatename(String label,String data) throws Exception {
+    public void setEmailTemplateName(String label,String data) throws Exception {
 
         try {
             setinput(label, data);
@@ -132,7 +132,7 @@ public class EmailTemplatesListPage extends SFPageBase {
      * @Param: accepts two Param label and data as input
      * @return values: populates related entity type
      */
-    public void setrelatedentitytype(String label,String data) throws Exception {
+    public void setRelatedEntityType(String label,String data) throws Exception {
 
         try{
             selectdropdown1(label,data);
@@ -151,7 +151,7 @@ public class EmailTemplatesListPage extends SFPageBase {
      * @Param: accepts two Param label and data as input
      * @return values: populates folder
      */
-    public void setfolder(String label,String data) throws Exception {
+    public void setFolder(String label,String data) throws Exception {
 
         try{
             selectdropdown1(label,data);
@@ -171,7 +171,7 @@ public class EmailTemplatesListPage extends SFPageBase {
      * @return values: populates subject
      */
 
-    public void setsubject(String label,String data) throws Exception {
+    public void setSubject(String label,String data) throws Exception {
 
         try {
 
@@ -183,7 +183,6 @@ public class EmailTemplatesListPage extends SFPageBase {
             System.out.println("In catch" +label);
         }
     }
-
 
     /*
      * @KTV1362

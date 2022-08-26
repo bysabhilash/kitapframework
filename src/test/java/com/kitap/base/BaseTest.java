@@ -45,13 +45,16 @@ import com.kitap.pageobjects.CardPaymentMethodListPage;
 import com.kitap.pageobjects.CasesListPage;
 import com.kitap.pageobjects.ChangeRequestListPage;
 import com.kitap.pageobjects.ContactListPage;
+import com.kitap.pageobjects.ContactRequestListPage;
 import com.kitap.pageobjects.ContractsPage;
 import com.kitap.pageobjects.EmailTemplatesListPage;
 import com.kitap.pageobjects.EntitlementPage;
 import com.kitap.pageobjects.FinanceTransactionListPage;
+import com.kitap.pageobjects.ImagesListPage;
 import com.kitap.pageobjects.IncidentPage;
 import com.kitap.pageobjects.LeadsListPage;
 import com.kitap.pageobjects.LightningLoginPage;
+import com.kitap.pageobjects.LocationGroupsListPage;
 import com.kitap.pageobjects.Operatinghours;
 import com.kitap.pageobjects.Opportunitypagelist;
 import com.kitap.pageobjects.OrderListPage;
@@ -64,17 +67,22 @@ import com.kitap.pageobjects.ProductListPage;
 import com.kitap.pageobjects.QuickTextListPage;
 import com.kitap.pageobjects.RefundPage;
 import com.kitap.pageobjects.ReturnOrderListPage;
+import com.kitap.pageobjects.ScoreCardsListPage;
+import com.kitap.pageobjects.SellersListPage;
 import com.kitap.pageobjects.ServiceAppointmentListPage;
 import com.kitap.pageobjects.ServiceContractListPage;
 import com.kitap.pageobjects.ServiceTerritoriesListPage;
 import com.kitap.pageobjects.ShiftPage;
+import com.kitap.pageobjects.StreamingChannelsListPage;
 import com.kitap.pageobjects.WorkOrdersListPage;
+import com.kitap.pageobjects.WorkPlanTemplatesListPage;
+import com.kitap.pageobjects.WorkStepTemplatesListPage;
 import com.kitap.pageobjects.Worktype;
 import com.kitap.utilities.ExcelReader;
 
-import KITAP.GetSFApps;
-import KITAP.HTTPClientWrapper;
-import KITAP.PageBase;
+import kitap.GetSFApps;
+import kitap.HTTPClientWrapper;
+import kitap.PageBase;
 
 /*@author: KT1456 
 @Date: 22/06/2022
@@ -124,6 +132,14 @@ public class BaseTest implements PropertyReader {
 	protected BankingManagementListPage bankingmanagement;
 	protected Worktype worktype;
 	protected CardPaymentMethodListPage cardpaymentmethodlistpage;
+	protected ContactRequestListPage contactRequestListPage;
+	protected LocationGroupsListPage locationGroupsListPage;
+	protected ImagesListPage imageslistpage;
+	protected ScoreCardsListPage scoreCardsListPage;
+	protected SellersListPage sellerslistpage;
+	protected WorkPlanTemplatesListPage workPlanTemplatesListPage;
+	protected WorkStepTemplatesListPage worksteptemplateslistpage;
+	protected StreamingChannelsListPage streamingchannelslistpage;
 	
 	public static String SFBaseURL; 
 
@@ -310,6 +326,14 @@ public class BaseTest implements PropertyReader {
 		worktype = (Worktype)pageFactory.getPageObject(Worktype.class.getName());
 		bankingmanagement = (BankingManagementListPage)pageFactory.getPageObject(BankingManagementListPage.class.getName());
 		cardpaymentmethodlistpage = (CardPaymentMethodListPage)pageFactory.getPageObject(CardPaymentMethodListPage.class.getName());
+		imageslistpage = (ImagesListPage)pageFactory.getPageObject(ImagesListPage.class.getName());
+		streamingchannelslistpage = (StreamingChannelsListPage)pageFactory.getPageObject(StreamingChannelsListPage.class.getName());
+		sellerslistpage = (SellersListPage)pageFactory.getPageObject(SellersListPage.class.getName());
+		worksteptemplateslistpage = (WorkStepTemplatesListPage)pageFactory.getPageObject(WorkStepTemplatesListPage.class.getName());
+		contactRequestListPage = (ContactRequestListPage)pageFactory.getPageObject(ContactRequestListPage.class.getName());
+		scoreCardsListPage = (ScoreCardsListPage)pageFactory.getPageObject(ScoreCardsListPage.class.getName());
+		locationGroupsListPage = (LocationGroupsListPage)pageFactory.getPageObject(LocationGroupsListPage.class.getName());
+		workPlanTemplatesListPage = (WorkPlanTemplatesListPage)pageFactory.getPageObject(WorkPlanTemplatesListPage.class.getName());
 	}                                                           
 	
 	/*@author: KT1456 

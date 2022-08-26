@@ -1,10 +1,11 @@
 package com.kitap.pageobjects;
 
-import KITAP.SFPageBase;  
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import kitap.SFPageBase;
 
 	public class IndividualsListPage extends SFPageBase {
 

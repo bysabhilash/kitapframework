@@ -1,4 +1,4 @@
-package KITAP;
+package kitap;
 
 import java.awt.Toolkit  ; 
 import java.awt.image.BufferedImage;

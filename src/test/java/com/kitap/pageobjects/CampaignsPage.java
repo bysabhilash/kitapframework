@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import KITAP.SFPageBase;
+import kitap.SFPageBase;
 
 
 public class CampaignsPage extends SFPageBase

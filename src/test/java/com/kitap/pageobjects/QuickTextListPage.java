@@ -1,11 +1,9 @@
 package com.kitap.pageobjects;
-
-import KITAP.SFPageBase; 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+import kitap.SFPageBase;
 
 /*
  * @KTH1398
@@ -39,6 +37,7 @@ public class QuickTextListPage extends SFPageBase {
         try {
 
             SFClick(ninesymbol);
+            waitForSFPagetoLoad();
         } catch (Exception e) {
             System.out.println("in catch");
         }
@@ -66,10 +65,10 @@ public class QuickTextListPage extends SFPageBase {
     public void clickQuickText() throws InterruptedException {
 
         SFClick(QuickText1);
+        waitForSFPagetoLoad();
+    }
 
-        }
-
-     /*
+    /*
      * @KTH1398
      * @date: 16/08/2022
      * @Description:This method performs clicking on the New Quick text button .
@@ -78,7 +77,7 @@ public class QuickTextListPage extends SFPageBase {
     public void clickNewQuickText(String lable) throws Exception {
 
         clickSFbutton(lable);
-//        waitForSFPagetoLoad();
+        waitForSFPagetoLoad();
     }
     /*
      * @KTH1398
@@ -90,8 +89,7 @@ public class QuickTextListPage extends SFPageBase {
 
         try {
             setinput(label, data);
-//            waitForSFPagetoLoad();
-
+            waitForSFPagetoLoad();
         } catch (Exception e) {
             System.out.println("In catch" + label);
         }
@@ -105,7 +103,7 @@ public class QuickTextListPage extends SFPageBase {
     public void RelatedTo(String lable, String data) throws Exception {
         try {
             selectdropdown(lable, data);
-//            waitForSFPagetoLoad();
+            waitForSFPagetoLoad();
         } catch (Exception e) {
             System.out.println("In catch" + lable);
         }
@@ -119,7 +117,7 @@ public class QuickTextListPage extends SFPageBase {
     public void Field(String lable, String data) throws Exception {
         try {
             selectdropdown(lable, data);
-//            waitForSFPagetoLoad();
+            waitForSFPagetoLoad();
         } catch (Exception e) {
             System.out.println("In catch" + lable);
         }
@@ -171,13 +169,13 @@ public class QuickTextListPage extends SFPageBase {
      * @Description:This method performs clicking on the Save button .
      *  @return values: save  the dat in the Quick text list page.
      */
-        public void clicksave(String label) throws Exception {
-            try {
-                click(label);
-
-
-            } catch (Exception e) {
-                System.out.println("in catch" + label);
-            }
+    public void savebutton (String label) throws Exception{
+        try {
+            click(label);
+        }
+        catch (Exception e)
+        {
+            System.out.println("In catch" + label);
         }
     }
+}

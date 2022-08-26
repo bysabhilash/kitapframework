@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.kitap.base.BaseTest;
 
-import KITAP.SFPageBase;
+import kitap.SFPageBase;
 
 public class CampaignCreationViaUI extends BaseTest {
     @Test(dataProviderClass = com.kitap.utilities.TestUtil.class, dataProvider = "dp")

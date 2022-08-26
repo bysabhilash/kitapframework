@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy; 
 import org.openqa.selenium.support.PageFactory;
 
-import KITAP.SFPageBase;
+import kitap.SFPageBase;
 
 /*
  * @KT1444
@@ -13,7 +13,7 @@ import KITAP.SFPageBase;
  */
 
 
-public class LeadsListPage extends KITAP.SFPageBase {
+public class LeadsListPage extends kitap.SFPageBase {
 	 public LeadsListPage(WebDriver webDriver) {
 		    super(webDriver);
 		    PageFactory.initElements(driver, this);

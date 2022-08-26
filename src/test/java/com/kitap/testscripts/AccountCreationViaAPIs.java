@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import com.kitap.base.BaseTest;
 
-import KITAP.HTTPClientWrapper;
+import kitap.HTTPClientWrapper;
 
 
 /**

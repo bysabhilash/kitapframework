@@ -14,7 +14,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import KITAP.SFPageBase;
+import kitap.SFPageBase;
 
 public class IncidentPage extends SFPageBase{
 	 public IncidentPage(WebDriver webDriver) {

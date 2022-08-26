@@ -2,7 +2,6 @@ package com.kitap.testscripts;
 import java.util.Hashtable;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
-
 import com.kitap.base.BaseTest;
 
 /*
@@ -27,23 +26,23 @@ public class EmailTemplatesCreationViaUI extends BaseTest {
 
         emailTemplatesListPage.clickninesymbol();
 
-        emailTemplatesListPage.enteremailtemplates("Search apps and items...", data.get("Data_searchbar"));
+        emailTemplatesListPage.enterEmailTemplates("Search apps and items...", data.get("Data_searchbar"));
 
-        emailTemplatesListPage.clickemailtemplates();
+        emailTemplatesListPage.clickEmailTemplates();
 
-        emailTemplatesListPage.clicknewemailtemplate("New Email Template");
+        emailTemplatesListPage.clickNewEmailTemplate("New Email Template");
 
-        emailTemplatesListPage.setemailtemplatename("Email Template Name", data.get("emailtemplatename"));
+        emailTemplatesListPage.setEmailTemplateName("Email Template Name", data.get("Email Template Name"));
 
-        emailTemplatesListPage.setDescription("Description", data.get("description"));
+        emailTemplatesListPage.setDescription("Description", data.get("Description"));
 
-        emailTemplatesListPage.setrelatedentitytype("Related Entity Type", data.get("relatedentitytype"));
+        emailTemplatesListPage.setRelatedEntityType("Related Entity Type", data.get("Related Entity Type"));
 
-        emailTemplatesListPage.setfolder("Folder", data.get("folder"));
+        emailTemplatesListPage.setFolder("Folder", data.get("Folder"));
 
-        emailTemplatesListPage.setsubject("Subject", data.get("subject"));
+        emailTemplatesListPage.setSubject("Subject", data.get("Subject"));
 
-       emailTemplatesListPage.savebutton("Save");
+        emailTemplatesListPage.savebutton("Save");
 
     }
 }

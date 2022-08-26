@@ -1,4 +1,4 @@
-package KITAP;
+package kitap;
 
 import com.jayway.jsonpath.JsonPath;
 
