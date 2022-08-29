@@ -26,6 +26,7 @@ public class StreamingChannelsListPage extends SFPageBase {
      @KTV1296
      @date: 22/08/2022
      @Description: This page object covers methods for all the fields in the Streaming channels
+     @return values: opens app launcher
     */
           public void clickninesymbol() throws InterruptedException {
               SFClick(ninesymbol);
@@ -36,6 +37,8 @@ public class StreamingChannelsListPage extends SFPageBase {
       @KTV1296
       @date: 22/08/2022
       @Description: This page object covers methods for all the fields in the Streaming channels
+      @Param: accepts two Param  label and targetvalue as input
+      @return values: opens StreamingChannekspage
      */
 
           public void enterStreamingChannels(String label, String targetvalue) throws Exception {
@@ -55,6 +58,8 @@ public class StreamingChannelsListPage extends SFPageBase {
       @KTV1296
       @date: 22/08/2022
       @Description: This page object covers methods for all the fields in the Streaming channels
+      @Description: This method performs clicking on the streamingchannels page 
+      @return values: opens new streaming channels page 
      */
 
           public void clickStreamingChannels() throws InterruptedException {
@@ -67,31 +72,37 @@ public class StreamingChannelsListPage extends SFPageBase {
       @KTV1296
       @date: 22/08/2022
       @Description: This page object covers methods for all the fields in the Streaming channels
+      @Param: accepts one argument label as input
+      @return values: opens new email templates page
      */
 
-          public void Newbutton() throws Exception {
+          public void Newbutton(String label) throws Exception {
 
-              clickSFbutton("New");
+              clickSFbutton(label);
               waitForSFPagetoLoad();
           }
-          /*
-           @KTV1296
-           @date: 22/08/2022
-           @Description: This page object covers methods for all the fields in the Streaming channels
-          */
-          public void ChannelName(String label, String targetvalue) throws Exception {
+      /*
+       @KTV1296
+       @date: 22/08/2022
+       @Description: This page object covers methods for all the fields in the Streaming channels
+       @Param: accepts two Param label and value as input
+       @return values: populates channelname
+      */
+      public void ChannelName(String label, String targetvalue) throws Exception {
 
-              try {
-                  setinput(label, targetvalue);
-                  waitForSFPagetoLoad();
-              } catch (Exception e) {
-                  System.out.println("In catch" + label);
-              }
+          try {
+              setinput(label, targetvalue);
+              waitForSFPagetoLoad();
+          } catch (Exception e) {
+              System.out.println("In catch" + label);
           }
+      }
      /*
       @KTV1296
       @date: 22/08/2022
       @Description: This page object covers methods for all the fields in the Streaming channels
+      @Param: accepts two Param label and value as input
+      @return values: populates description
      */
 
           public void Description(String label, String targetvalue) throws Exception {
@@ -107,6 +118,8 @@ public class StreamingChannelsListPage extends SFPageBase {
       @KTV1296
       @date: 22/08/2022
       @Description: This page object covers methods for all the fields in the Streaming channels
+      @Param: accepts arguments label  as input
+      @return values: populates save
      */
 
           public void clicksavebutton(String label) throws Exception {

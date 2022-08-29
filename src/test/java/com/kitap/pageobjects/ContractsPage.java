@@ -1,6 +1,6 @@
 package com.kitap.pageobjects;
 
-import org.openqa.selenium.Keys;  
+import org.openqa.selenium.Keys;   
 import org.openqa.selenium.WebDriver;  
 import org.openqa.selenium.WebElement; 
 import org.openqa.selenium.support.FindBy; 
@@ -148,7 +148,7 @@ public class ContractsPage extends SFPageBase {
 	    public void setcontractterm (String label,String data) throws Exception {
 
 	    	   setinput(label,data);
-	    	   waitForSFPagetoLoad();
+	    	  
 
 	    }
 	    
@@ -205,8 +205,8 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setbillingstreet(String label,String data) throws Exception {
 
-	    	setinput(label,data);
-	    	waitForSFPagetoLoad();
+	    	settext1(label,data);
+	    	
 
 	    }
 	    
@@ -221,7 +221,7 @@ public class ContractsPage extends SFPageBase {
 	    public void setbillingcity(String label,String data) throws Exception {
 
 	    	   settext1(label,data);
-	    	   waitForSFPagetoLoad();
+	    	  
 
 	    }
 	    
@@ -236,7 +236,7 @@ public class ContractsPage extends SFPageBase {
 	    public void setbillingstate(String label,String data) throws Exception {
 
 	    	settext1(label,data);
-	    	waitForSFPagetoLoad();
+	    	
 
 	    }
 	    
@@ -251,7 +251,7 @@ public class ContractsPage extends SFPageBase {
 	    public void setbillingcode(String label,String data) throws Exception {
 
 	    	settext1(label,data);
-	    	waitForSFPagetoLoad();
+	    	
 
 	    }
 	    
@@ -266,7 +266,7 @@ public class ContractsPage extends SFPageBase {
 	    public void setbillingcountry(String label,String data) throws Exception {
 
 	    	settext1(label,data);
-	    	waitForSFPagetoLoad();
+	    	
 
 	    }
 	    
@@ -280,8 +280,8 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setspecialterms(String label,String data) throws Exception {
 
-	    	   setinput(label,data);
-	    	   waitForSFPagetoLoad();
+	    	settext1(label,data);
+	    	  
 
 	    }
 	    
@@ -295,8 +295,8 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setdescription(String label,String data) throws Exception {
 
-	    	   setinput(label,data);
-	    	   waitForSFPagetoLoad();
+	    	settext1(label,data);
+	    	
 
 	    }
 	    

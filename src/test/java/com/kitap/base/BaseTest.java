@@ -50,6 +50,7 @@ import com.kitap.pageobjects.ContractsPage;
 import com.kitap.pageobjects.EmailTemplatesListPage;
 import com.kitap.pageobjects.EntitlementPage;
 import com.kitap.pageobjects.FinanceTransactionListPage;
+import com.kitap.pageobjects.HospitalManagementListPage;
 import com.kitap.pageobjects.ImagesListPage;
 import com.kitap.pageobjects.IncidentPage;
 import com.kitap.pageobjects.LeadsListPage;
@@ -140,6 +141,7 @@ public class BaseTest implements PropertyReader {
 	protected WorkPlanTemplatesListPage workPlanTemplatesListPage;
 	protected WorkStepTemplatesListPage worksteptemplateslistpage;
 	protected StreamingChannelsListPage streamingchannelslistpage;
+	protected HospitalManagementListPage hospitalmanagementlistpage;
 	
 	public static String SFBaseURL; 
 
@@ -334,6 +336,7 @@ public class BaseTest implements PropertyReader {
 		scoreCardsListPage = (ScoreCardsListPage)pageFactory.getPageObject(ScoreCardsListPage.class.getName());
 		locationGroupsListPage = (LocationGroupsListPage)pageFactory.getPageObject(LocationGroupsListPage.class.getName());
 		workPlanTemplatesListPage = (WorkPlanTemplatesListPage)pageFactory.getPageObject(WorkPlanTemplatesListPage.class.getName());
+		hospitalmanagementlistpage = (HospitalManagementListPage)pageFactory.getPageObject(HospitalManagementListPage.class.getName());
 	}                                                           
 	
 	/*@author: KT1456 

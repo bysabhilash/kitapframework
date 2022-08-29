@@ -1,6 +1,6 @@
 package kitap;
 
-import java.awt.Desktop.Action;    
+import java.awt.Desktop.Action;     
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -11,6 +11,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -32,7 +34,7 @@ public class SFPageBase extends PageBase {
 		public SFPageBase(WebDriver driver) {
 			super(driver);
 		}
-	
+		
 		protected static String uiapi_record_json;
 		private static ArrayList<String> listoflabels;
 		protected static HashMap<String, String> labelandtype;
@@ -364,6 +366,7 @@ public class SFPageBase extends PageBase {
 		    * @return values: None
 		 */
 		public void setinput(String label, String targetvalue) throws Exception {
+		
 			WebElement we;
 	
 			java.util.List<WebElement> ele = driver.findElements(By.xpath("//span"));
@@ -473,8 +476,8 @@ public class SFPageBase extends PageBase {
 				}
 			}
 		}
-
-
+		
+		
 	
 		 /*
 		    * @KT1456

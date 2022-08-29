@@ -26,12 +26,14 @@ public class SellersCreationViaUI extends BaseTest {
         sellerslistpage.clickninesymbol();
         sellerslistpage.enterSellers("Search apps and items...",data.get("Data_searchbar"));
         sellerslistpage.ClickSellers();
-        sellerslistpage.Newbutton();
+        sellerslistpage.Newbutton("New");
         sellerslistpage.selectParty("Party",data.get("Party"));
         sellerslistpage.setName("Name",data.get("Name"));
         sellerslistpage.sellerType("Seller Type",data.get("Seller Type"));
         sellerslistpage.sellerTier("Seller Tier",data.get("Seller Tier"));
         sellerslistpage.SalesAmount("Sales Amount",data.get("Sales Amount"));
+        sellerslistpage.setactivedate("Active To Date",data.get("activedate"));
+        sellerslistpage.setactivefromdate("Active From Date",data.get("activefromdate"));
         sellerslistpage.clicksavebutton("Save");
 
 

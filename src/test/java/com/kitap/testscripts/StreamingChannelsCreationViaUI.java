@@ -29,7 +29,7 @@ public class StreamingChannelsCreationViaUI extends BaseTest {
 
         streamingchannelslistpage.clickStreamingChannels();
 
-        streamingchannelslistpage.Newbutton();
+        streamingchannelslistpage.Newbutton("New");
 
         streamingchannelslistpage.ChannelName("Streaming Channel Name",data.get("Streaming Channel Name"));
 

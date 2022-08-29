@@ -76,7 +76,7 @@ public class EmailTemplatesListPage extends SFPageBase {
 
     public void clickNewEmailTemplate(String label) throws Exception {
         try{
-            clickSFbutton("New Email Template");
+            clickSFbutton(label);
             waitForSFPagetoLoad();
         }
         catch (Exception c)
