@@ -1,11 +1,17 @@
 package com.kitap.testscripts;
 
-import java.util.Hashtable ; 
+import java.util.Hashtable ;  
 
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.kitap.base.BaseTest;
+
+/*
+ * @KT1461
+ * @date: 18/07/2022
+ * @Description: This test script covers the creation of an asset  via UI
+ */
 
 public class AssetCreationViaUI extends BaseTest {
 	
@@ -21,12 +27,10 @@ public class AssetCreationViaUI extends BaseTest {
         lightningloginpage.openHomepage(SFBaseURL);
         
         lightningloginpage.login(SFUserId, SFPassword);
-        
-        lightningloginpage.applauncher("Asset");
         		
 	    assetpage.clickninesymbol();
 		  
-	    assetpage.setText("Search apps and items...",data.get("Data_searchbar"));
+	    assetpage.enterasset("Search apps and items...",data.get("Data_searchbar"));
 		  
 	    assetpage.clickasset();
 		 
@@ -36,9 +40,11 @@ public class AssetCreationViaUI extends BaseTest {
         
         assetpage.setserialnumber("Serial Number",data.get("serialnumber"));
         
+        assetpage.selectproduct("Product", data.get("product"));
+        
         assetpage.setinstalldate("Install Date",data.get("installdate"));
         
-        assetpage.setstatus("Status",data.get("status"));
+        assetpage.selectstatus("Status",data.get("status"));
         
         assetpage.setquantity("Quantity", data.get("quantity"));
         

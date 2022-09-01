@@ -1,12 +1,18 @@
 package com.kitap.testscripts;
 
-import java.util.Hashtable ;
+import java.util.Hashtable ; 
 
 
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.kitap.base.BaseTest;
+
+/*
+ * @KT1461
+ * @date: 20/07/2022
+ * @Description: This test script covers the creation of an entitlement via UI
+ */
 
 public class EntitlementCreationViaUI extends BaseTest {
 	
@@ -25,7 +31,7 @@ public class EntitlementCreationViaUI extends BaseTest {
         
         entitlementpage.clickninesymbol();
         
-        entitlementpage.setText("Search apps and items...",data.get("Data_searchbar"));
+        entitlementpage.enterentitlement("Search apps and items...",data.get("Data_searchbar"));
         
         entitlementpage.Entitlement();
         

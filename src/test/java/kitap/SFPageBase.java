@@ -1,6 +1,6 @@
 package kitap;
 
-import java.awt.Desktop.Action;     
+import java.awt.Desktop.Action;      
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -292,7 +292,7 @@ public class SFPageBase extends PageBase {
 				}
 	
 			} catch (Exception e) {
-				System.out.println("in catch");
+				System.out.println("Given " + targetvalue + " not entered in to particular field by using setText method");
 			}
 		}
 		 /*
@@ -322,7 +322,7 @@ public class SFPageBase extends PageBase {
 			      }
 
 			   } catch (Exception e) {
-			      System.out.println("in catch");
+			      System.out.println("Given " + targetvalue + " Dropdown elements are not bale select by usinng selectOption method ");
 			   }
 			}
 		 /*
@@ -354,7 +354,7 @@ public class SFPageBase extends PageBase {
 				}
 	
 			} catch (Exception e) {
-				System.out.println("in catch");
+				System.out.println("Not able to click particular " + label + " by usimg clickSFbutton");
 			}
 		}
 		
@@ -382,7 +382,7 @@ public class SFPageBase extends PageBase {
 							break;
 	
 						} catch (Exception e) {
-							we = driver.findElement(By.xpath("(//span[text()='Description'])[2]//following::textarea"));
+							we = driver.findElement(By.xpath("(//span[text()='" + label + "'])[2]//following::textarea"));
 							we.sendKeys(targetvalue);
 							System.out.println("Sent values as " + targetvalue);
 							break;
@@ -390,16 +390,13 @@ public class SFPageBase extends PageBase {
 				}
 	
 				catch (Exception e) {
-					System.out.println("in catch");
+					System.out.println("Given "  + targetvalue +  " not entered in to particular field by using setinput method");
 				}
 	
 			}
 	
 		}
 
-		
-		
-		
 		/*
 		    * @KT1456
 		    * @date: 11/07/2022
@@ -439,7 +436,7 @@ public class SFPageBase extends PageBase {
 	}
 		  catch(Exception e) 
 		  { 
-			  System.out.println("in catch"); 
+			  System.out.println("Given "  + targetvalue +  " Dropdown elements are not bale select by usinng selectdropdown method "); 
 			  }
 		  
 		  }
@@ -472,13 +469,11 @@ public class SFPageBase extends PageBase {
 				}
 	
 				catch (Exception e) {
-					System.out.println("in catch");
+					System.out.println("Given "  + targetvalue +  " not entered in to particular field by using settext1 method");
 				}
 			}
 		}
 		
-		
-	
 		 /*
 		    * @KT1456
 		    * @date: 11/07/2022
@@ -510,7 +505,7 @@ public class SFPageBase extends PageBase {
 				}
 	
 			} catch (Exception e) {
-				System.out.println("in catch");
+				System.out.println("Not able to click particular "  + label +  " by usimg click method");
 			}
 		}
 		
@@ -553,7 +548,7 @@ public class SFPageBase extends PageBase {
 	}
 		  catch(Exception e) 
 		  { 
-			  System.out.println("in catch"); 
+			  System.out.println("Given "  + targetvalue +  " Dropdown elements are not bale select by usinng selectdropdown1 method "); 
 			  }
 		  
 		  }
@@ -606,7 +601,7 @@ public class SFPageBase extends PageBase {
 	}
 		  catch(Exception e) 
 		  { 
-			  System.out.println("in catch"); 
+			  System.out.println("Given "  + targetvalue +  " Dropdown elements are not bale select by usinng selectimgclick method "); 
 			  }
 		  
 		  }
@@ -625,9 +620,9 @@ public class SFPageBase extends PageBase {
 		  try { 
 		  if(!label.isEmpty()) { 
 		  try { 
-		    we = driver.findElement(By.xpath("//label//span[text()='" + label +"']//following::input[1]")); 
+		    we = driver.findElement(By.xpath("////span[text()='" + label +"']//following::input[1]")); 
 		    we.click();
-			we.sendKeys(targetvalue) ;	
+			we.sendKeys(targetvalue);	
 			waitForSFPagetoLoad();   
 			we.sendKeys(Keys.DOWN);
 			we.sendKeys(Keys.ENTER);
@@ -648,7 +643,7 @@ public class SFPageBase extends PageBase {
 	}
 		  catch(Exception e) 
 		  { 
-			  System.out.println("in catch"); 
+			  System.out.println("Given "  +  targetvalue  +  " Dropdown elements are not bale select by usinng selectcombobox method "); 
 			  }
 		  
 		  }
@@ -738,5 +733,30 @@ public class SFPageBase extends PageBase {
 			
 	      
 	      }
+		
+		public void settext(String label, String targetvalue) throws Exception {
+			WebElement we;
+			java.util.List<WebElement> ele = driver.findElements(By.xpath("//span"));
+			for (int i = 0; i < ele.size(); i++) {
+	
+				try {
+					if (ele.get(i).getText().equalsIgnoreCase(label))
+						try {
+							we = driver.findElement(By.xpath("//span[text()='" + label + "']//following::textarea"));
+							we.sendKeys(targetvalue);
+						    waitForSFPagetoLoad();
+							we.sendKeys(Keys.ENTER);
+						} catch (Exception e) {
+							
+						}
+	
+				}
+	
+				catch (Exception e) {
+					System.out.println("Given "  + targetvalue +  " not entered in to particular field by using settext method");
+				}
+			}
+		}
+		
 	}
 

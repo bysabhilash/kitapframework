@@ -42,7 +42,7 @@ public class HospitalManagementListPage extends SFPageBase {
      * @date: 25/08/2022
      * @Description: This method performs entering input as hospital management in app launcher of salesforce home page
      * @Param: accepts two Param  label and value as input
-     * @return values: opens hospital management page
+     * @return values: related screen name appear in applauncher
      */
     public void enterHospitalManagement(String label,String data) throws Exception {
 
@@ -58,8 +58,8 @@ public class HospitalManagementListPage extends SFPageBase {
     /*
      * @KTV1362
      * @date: 25/08/2022
-     * @Description: This method performs clicking on new button on the hospital management page
-     * @return values: opens new hospital management page
+     * @Description: This method performs clicking  on the hospital management page
+     * @return values: opens dashboards page 
      */
     public void clickHospitalManagement() throws InterruptedException {
 
@@ -336,8 +336,9 @@ public class HospitalManagementListPage extends SFPageBase {
     public void enterExistingPatient(String label, String targetvalue) throws InterruptedException {
     try {
         selectcombobox(label, targetvalue);
-    } 
-    catch (Exception e) {
+      } 
+    catch (Exception e)  
+    {
      System.out.println("Sent values as " + targetvalue);
     }
 }

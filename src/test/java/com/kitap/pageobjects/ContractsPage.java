@@ -32,10 +32,16 @@ public class ContractsPage extends SFPageBase {
 
 	    public void clicknewbutton(String label) throws Exception {
 
-	    	clickSFbutton(label);
-	    	 waitForSFPagetoLoad();
+	    	try {
+	    	      clickSFbutton(label);
+	    	       waitForSFPagetoLoad();
+	    	 }
+	    	catch (Exception e)
+			{
+				System.out.println("In catch"+label);
+			}
 
-	    }
+		}
 	    
 	    /*
 	     * @KT1461
@@ -46,9 +52,17 @@ public class ContractsPage extends SFPageBase {
 	     */
 
 	    public void selectaccountname(String label,String data) throws Exception {
-	       selectcombobox(label, data);
-	       waitForSFPagetoLoad();
+	    	
+	    	try {
+	              selectcombobox(label, data);
+	              waitForSFPagetoLoad();
 	      }
+	    	catch (Exception e)
+			{
+				System.out.println("In catch"+label);
+			}
+
+		}
 	    
 	    /*
 	     * @KT1461
@@ -59,9 +73,16 @@ public class ContractsPage extends SFPageBase {
 	     */
 	    
 	    public void selectcustomersignedby(String label,String data) throws Exception {
-	    	selectcombobox(label, data);
-		       waitForSFPagetoLoad();
+	    	try {
+	              selectcombobox(label, data);
+	              waitForSFPagetoLoad();
 	      }
+	    	catch (Exception e)
+			{
+				System.out.println("In catch"+label);
+			}
+
+		}
 	    
 	    /*
 		 * @KT1461
@@ -72,11 +93,16 @@ public class ContractsPage extends SFPageBase {
 		 */
 	    
 	    public void setcustomersigntitle (String label,String data) throws Exception {
-
-	    	settext1(label,data);
-	    	   waitForSFPagetoLoad();
-
+            
+	    	try {
+	    	settext1(label,data);    	   
 	    }
+	    	catch (Exception e)
+			{
+				System.out.println("In catch"+label);
+			}
+
+		}
 	    
 	    /*
 		 * @KT1461
@@ -88,10 +114,15 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setcustomersigndate (String label,String data) throws Exception {
 
-	    	settext1(label,data);
-	    	   waitForSFPagetoLoad();
+	    	try {
+		    	settext1(label,data);    	   
+		    }
+		    	catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
 
-	    }
+			}
 	    
 	    /*
 	     * @KT1461
@@ -102,9 +133,16 @@ public class ContractsPage extends SFPageBase {
 	     */
 	    
 	    public void selectpricebooks(String label,String data) throws Exception {
-	    	selectcombobox(label, data);
-		       waitForSFPagetoLoad();
-	    }
+	    	try {
+    	        selectdropdown(label,data);
+    	        waitForSFPagetoLoad();
+    }
+    	catch (Exception e)
+		{
+			System.out.println("In catch"+label);
+		}
+
+	}
 	    
 	    /*
 	     * @KT1461
@@ -117,10 +155,16 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void selectstatus(String label,String data) throws Exception {
 
-	    	selectdropdown(label,data);
-	    	 waitForSFPagetoLoad();
-
+	    	try {
+	    	        selectdropdown(label,data);
+	    	        waitForSFPagetoLoad();
 	    }
+	    	catch (Exception e)
+			{
+				System.out.println("In catch"+label);
+			}
+
+		}
 	    
 	    /*
 		 * @KT1461
@@ -132,10 +176,15 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setcontractsigndate (String label,String data) throws Exception {
 
+	    	try {
 	    	   setinput(label,data);
-	    	   waitForSFPagetoLoad();
-
 	    }
+	    	catch (Exception e)
+			{
+				System.out.println("In catch"+label);
+			}
+
+		}
 	    
 	    /*
 		 * @KT1461
@@ -147,10 +196,15 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setcontractterm (String label,String data) throws Exception {
 
-	    	   setinput(label,data);
-	    	  
+	    	try {
+		    	   setinput(label,data);
+		    }
+		    	catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
 
-	    }
+			}
 	    
 	    /*
 	     * @KT1461
@@ -162,10 +216,16 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void selectownerexpiratonnotice(String label,String data) throws Exception {
 
-	    	   selectdropdown(label,data);
-	    	   waitForSFPagetoLoad();
-
-	    }
+	    	try {
+    	        selectdropdown(label,data);
+    	        waitForSFPagetoLoad();
+		    }
+		    	catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
+		
+			}
 	    
 	    /*
 	     * @KT1461
@@ -176,9 +236,17 @@ public class ContractsPage extends SFPageBase {
 	     */
 
 	    public void selectsignedperson(String label,String data) throws Exception {
+	    	
+	    	try {
 	    	selectcombobox(label, data);
 		       waitForSFPagetoLoad();
 	    }
+	    	catch (Exception e)
+			{
+				System.out.println("In catch"+label);
+			}
+	
+		}
 	    
 	    /*
 		 * @KT1461
@@ -190,10 +258,16 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setcompanysigneddate(String label,String data) throws Exception {
 
-	    	settext1(label,data);
-	    	   waitForSFPagetoLoad();
+	    	try {
+		    	settext1(label,data);    	   
+		    }
+		    	catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
 
-	    }
+			}
+
 	    
 	    /*
 		 * @KT1461
@@ -205,10 +279,16 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setbillingstreet(String label,String data) throws Exception {
 
-	    	settext1(label,data);
-	    	
+	    	try {
+		    	settext1(label,data);    	   
+		    }
+		    	catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
 
-	    }
+			}
+
 	    
 	    /*
 		 * @KT1461
@@ -220,10 +300,16 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setbillingcity(String label,String data) throws Exception {
 
-	    	   settext1(label,data);
-	    	  
+	    	try {
+		    	settext1(label,data);    	   
+		    }
+		    	catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
 
-	    }
+			}
+
 	    
 	    /*
 		 * @KT1461
@@ -235,10 +321,16 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setbillingstate(String label,String data) throws Exception {
 
-	    	settext1(label,data);
-	    	
+	    	try {
+		    	settext1(label,data);    	   
+		    }
+		    	catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
 
-	    }
+			}
+
 	    
 	    /*
 		 * @KT1461
@@ -250,10 +342,16 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setbillingcode(String label,String data) throws Exception {
 
-	    	settext1(label,data);
-	    	
+	    	try {
+		    	settext1(label,data);    	   
+		    }
+		    	catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
 
-	    }
+			}
+
 	    
 	    /*
 		 * @KT1461
@@ -265,10 +363,16 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setbillingcountry(String label,String data) throws Exception {
 
-	    	settext1(label,data);
-	    	
+	    	try {
+		    	settext1(label,data);    	   
+		    }
+		    	catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
 
-	    }
+			}
+
 	    
 	    /*
 		 * @KT1461
@@ -280,10 +384,16 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setspecialterms(String label,String data) throws Exception {
 
-	    	settext1(label,data);
-	    	  
+	    	try {
+		    	settext1(label,data);    	   
+		    }
+		    	catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
 
-	    }
+			}
+
 	    
 	    /*
 		 * @KT1461
@@ -295,10 +405,16 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void setdescription(String label,String data) throws Exception {
 
-	    	settext1(label,data);
-	    	
+	    	try {
+		    	settext1(label,data);    	   
+		    }
+		    	catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
 
-	    }
+			}
+
 	    
 	    /*
 		 * @KT1461
@@ -311,10 +427,17 @@ public class ContractsPage extends SFPageBase {
 
 	    public void clicksavebutton(String label) throws Exception {
 
-	    	click(label);
-	    	   waitForSFPagetoLoad();
+	    	try {    		
+	    	       click(label);
+	    	       waitForSFPagetoLoad();
 
-	    }
+			 }
+			    catch (Exception e)
+				{
+					System.out.println("In catch"+label);
+				}
+
+	}
 }
 	   
 

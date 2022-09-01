@@ -1,11 +1,17 @@
 package com.kitap.testscripts;
 
-import org.testng.SkipException;
+import org.testng.SkipException; 
 import org.testng.annotations.Test;
 
 import com.kitap.base.BaseTest;
 
 import java.util.Hashtable;
+
+/*
+ * @KT1444
+ * @date: 27/07/2022
+ * @Description: This test script covers the creation of an alternativepaymentr creartion via UI
+ */
 
 public class AlternativePaymentCreationViaUI extends BaseTest
 {
@@ -21,12 +27,12 @@ public class AlternativePaymentCreationViaUI extends BaseTest
         lightningloginpage.openHomepage(SFBaseURL);
         lightningloginpage.login(SFUserId, SFPassword);
         alternativepaymentlistpage.clickninesymbol();
-        alternativepaymentlistpage.setText("Search apps and items...",data.get("Data_searchbar"));
+        alternativepaymentlistpage.enteralternativepayment("Search apps and items...",data.get("Data_searchbar"));
         alternativepaymentlistpage.clickAlternativepayments();
-        alternativepaymentlistpage.Newbutton();
+        alternativepaymentlistpage.Newbutton("New");
         alternativepaymentlistpage.setNickname("Nickname",data.get("Nickname"));
         alternativepaymentlistpage.setRegisterdEmail("Registered Email",data.get("Registered Email"));
-        alternativepaymentlistpage.setAccount(data.get("accountname"));
+        alternativepaymentlistpage.setAccount("Account",data.get("accountname"));
         alternativepaymentlistpage.setStatus("Status",data.get("Status"));
         alternativepaymentlistpage.setProcessingmode("Processing Mode",data.get("Processing Mode"));
         alternativepaymentlistpage.setAutopay("Auto Pay");

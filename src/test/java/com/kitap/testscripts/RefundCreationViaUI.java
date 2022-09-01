@@ -1,11 +1,18 @@
 package com.kitap.testscripts;
 
-import java.util.Hashtable;   
+import java.util.Hashtable; 
+   
 
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.kitap.base.BaseTest;
+
+/*
+ * @KT1461
+ * @date: 13/07/2022
+ * @Description: This test script covers the creation of an refunds  via UI
+ */
 
 public class RefundCreationViaUI extends BaseTest {
 	
@@ -24,7 +31,7 @@ public class RefundCreationViaUI extends BaseTest {
         
         refundpage.clickninesymbol();
         
-        refundpage.setText("Search apps and items...",data.get("Data_searchbar"));
+        refundpage.enterrefunds("Search apps and items...",data.get("Data_searchbar"));
         
         refundpage.clickrefund();
        
@@ -39,8 +46,6 @@ public class RefundCreationViaUI extends BaseTest {
         refundpage.setamount("Amount",data.get("amount"));
         
         refundpage.selectstatus("Status",data.get("status"));
-        
-        refundpage.settime("Time",data.get("time"));
         
         refundpage.setdate("Date",data.get("date"));
  

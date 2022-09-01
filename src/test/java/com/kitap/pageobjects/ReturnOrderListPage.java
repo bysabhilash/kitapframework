@@ -1,6 +1,6 @@
 package com.kitap.pageobjects;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.By; 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +10,12 @@ import org.openqa.selenium.support.PageFactory;
 import com.kitap.base.BaseTest;
 
 import kitap.SFPageBase;
+
+/*
+ * @KT1461 
+ * @date: 25/07/2022
+ * @Description: This page object covers methods for all the fields in salesforce of returnorder creation
+ */
 
 
 public class ReturnOrderListPage extends SFPageBase
@@ -25,50 +31,143 @@ public class ReturnOrderListPage extends SFPageBase
 
     @FindBy(xpath="(//p[@class='slds-truncate'])[1]")
     private WebElement retunrOrder;
+    
+    /*
+     * @KT1444
+     * @date:25/07/2022
+     * @Description: This method performs clicking on app launcher in the salesforce home page
+     * @return values: opens app launcher
+     */
 
     public void clickninesymbol() throws InterruptedException {
-        SFClick(ninesymbol);
-        waitForSFPagetoLoad();
-    }
+    	try {
+	    	SFClick(ninesymbol);
+	    	waitForSFPagetoLoad();
 
+	    }
+	    catch (Exception e)
+        {
+            System.out.println("In catch");
+        }
+    }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs entering input as returnorder in app launcher of salesforce home page
+     * @Param: accepts two Param  label and value as input
+     * @return values: related screen name appear in applauncher
+     */
+    public void enterreturnorder(String label,String data) throws Exception {
+
+        try {
+            setText(label, data);
+        }
+        catch (Exception e)
+        {
+            System.out.println("In catch" +label);
+        }
+    }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs clicking  on the product screen page
+     * @return values: opens dashboards page 
+     */
     public void clickReturnOrder() throws InterruptedException {
 
-        SFClick(retunrOrder);
-        waitForSFPagetoLoad();
-    }
+    	try {
+	    	SFClick(retunrOrder);
+	    	waitForSFPagetoLoad();
 
-    public void Newbutton() throws Exception {
-
-        clickSFbutton("New");
-        waitForSFPagetoLoad();
+	    }
+	    catch (Exception e)
+        {
+            System.out.println("In catch");
+        }
     }
-    public void setCase(String data) throws InterruptedException {
-        WebElement ele =driver.findElement(By.xpath("//input[@placeholder='Search Cases...']"));
-        ele.sendKeys(data);
-        waitForSFPagetoLoad();
-        ele.sendKeys(Keys.DOWN);
-        ele.sendKeys(Keys.ENTER);
-        waitForSFPagetoLoad();
-    }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs clicking on new button on the product page
+     * @Param: accepts one argument label as input
+     * @return values: opens new product page
+     */
 
-    public void setAccount(String data) throws InterruptedException {
-        WebElement ele =driver.findElement(By.xpath("//input[@placeholder='Search Accounts...']"));
-        ele.sendKeys(data);
-        waitForSFPagetoLoad();
-        ele.sendKeys(Keys.DOWN);
-        ele.sendKeys(Keys.ENTER);
-        waitForSFPagetoLoad();
+    public void Newbutton(String label) throws Exception {
 
-    }
+    	try {
+	    	clickSFbutton(label);
+	    	waitForSFPagetoLoad();
+	    }
+	    	 catch (Exception e)
+	        {
+	            System.out.println("In catch");
+	        }
+	    }
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs searching for case on product page
+     * @Param: accepts two Param label and targetvalue as input
+     * @return values: populates case
+     */
+    
+    public void setCase(String label,String data) throws InterruptedException {
+    	 try {
+		        selectcombobox(label, data);
+		    } 
+		    catch (Exception e) 
+		 {
+		     System.out.println("Sent values as " + data);
+		    }
+		}
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs searching for account on product page
+     * @Param: accepts two Param label and targetvalue as input
+     * @return values: populates account
+     */
 
-    public void setPeople(String data) throws InterruptedException {
-        WebElement ele =driver.findElement(By.xpath("//input[@placeholder='Search People...']"));
-        ele.sendKeys(data);
-        waitForSFPagetoLoad();
-        ele.sendKeys(Keys.DOWN);
-        ele.sendKeys(Keys.ENTER);
-        waitForSFPagetoLoad();
-    }
+    public void setAccount(String label,String data) throws InterruptedException {
+    	 try {
+		        selectcombobox(label, data);
+		    } 
+		    catch (Exception e) 
+		 {
+		     System.out.println("Sent values as " + data);
+		    }
+		}
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs searching for people on product page
+     * @Param: accepts two Param label and targetvalue as input
+     * @return values: populates returned person name 
+     */
+
+    public void setPeople(String label,String data) throws InterruptedException {
+    	 try {
+		        selectcombobox(label, data);
+		    } 
+		    catch (Exception e) 
+		 {
+		     System.out.println("Sent values as " + data);
+		    }
+		}
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs selecting status on the product page
+     * @Param: accepts two Param label and data as input
+     * @return values: populates status
+     */
 
     public void setStatus(String label,String data)
     {
@@ -81,34 +180,32 @@ public class ReturnOrderListPage extends SFPageBase
         }
 
     }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs searching for contact on product page
+     * @Param: accepts two Param label and targetvalue as input
+     * @return values: populates contact
+     */
 
-    public void setContact(String data) throws InterruptedException {
-        WebElement ele =driver.findElement(By.xpath("//input[@placeholder='Search Contacts...']"));
-        ele.sendKeys(data);
-        waitForSFPagetoLoad();
-        ele.sendKeys(Keys.DOWN);
-        ele.sendKeys(Keys.ENTER);
-        waitForSFPagetoLoad();
+    public void setContact(String label,String data) throws InterruptedException {
+    	 try {
+		        selectcombobox(label, data);
+		    } 
+		    catch (Exception e) 
+		 {
+		     System.out.println("Sent values as " + data);
+		    }
+		}
 
-    }
-
-    public void setSourceLocation() throws InterruptedException {
-        WebElement ele=driver.findElement(By.xpath("(//span[text()='Source Location'])[2]//following::input[1]"));
-        ele.sendKeys("test source location");
-        waitForSFPagetoLoad();
-        ele.sendKeys(Keys.DOWN);
-        ele.sendKeys(Keys.ENTER);
-        waitForSFPagetoLoad();
-    }
-
-    public void setDestinationLocation() throws InterruptedException {
-        WebElement ele=driver.findElement(By.xpath("//span[text()='Destination Location']//following::input[1]"));
-        ele.sendKeys("test destination location");
-        waitForSFPagetoLoad();
-        ele.sendKeys(Keys.DOWN);
-        ele.sendKeys(Keys.ENTER);
-        waitForSFPagetoLoad();
-    }
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs selecting shipmenttype on the products page
+     * @Param: accepts two Param label and data as input
+     * @return values: populates status
+     */
 
     public void setShipmenttype(String label,String data)
     {
@@ -121,11 +218,19 @@ public class ReturnOrderListPage extends SFPageBase
         }
 
     }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs enters address name on the product page
+     * @Param: accepts two Param label and data as input
+     * @return values: populates address
+     */
 
     public void setAddress(String label, String data)
     {
         try{
-            setinput(label,data);
+            settext(label,data);
         }
         catch (Exception e)
         {
@@ -133,6 +238,14 @@ public class ReturnOrderListPage extends SFPageBase
         }
 
     }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs enters city name on the product page
+     * @Param: accepts two Param label and data as input
+     * @return values: populates city
+     */
 
     public void setCity(String label, String data)
     {
@@ -145,6 +258,14 @@ public class ReturnOrderListPage extends SFPageBase
         }
 
     }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs enters state name on the product page
+     * @Param: accepts two Param label and data as input
+     * @return values: populates state
+     */
 
     public void setStateorProvince(String label, String data)
     {
@@ -157,6 +278,14 @@ public class ReturnOrderListPage extends SFPageBase
         }
 
     }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs enters Zipcode on the product page
+     * @Param: accepts two Param label and data as input
+     * @return values: populates Zip code
+     */
 
     public void setZiporPostal(String label, String data)
     {
@@ -169,6 +298,14 @@ public class ReturnOrderListPage extends SFPageBase
         }
 
     }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs enters country name on the product page
+     * @Param: accepts two Param label and data as input
+     * @return values: populates country
+     */
 
     public void setCountry(String label, String data)
     {
@@ -181,6 +318,14 @@ public class ReturnOrderListPage extends SFPageBase
         }
 
     }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs enters date on the product page
+     * @Param: accepts two Param label and data as input
+     * @return values: populates date
+     */
 
     public void setDate(String label, String data)
     {
@@ -193,6 +338,14 @@ public class ReturnOrderListPage extends SFPageBase
         }
 
     }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs enters description on the product page
+     * @Param: accepts two Param label and data as input
+     * @return values: populates description
+     */
 
     public void setDescription(String label, String data)
     {
@@ -206,6 +359,14 @@ public class ReturnOrderListPage extends SFPageBase
         }
 
     }
+    
+    /*
+     * @KT1444
+     * @date: 25/07/2022
+     * @Description: This method performs click action on save on product page
+     * @Param: accepts arguments label  as input
+     * @return values: saves data
+     */
 
     public void clicksave(String label)
     {

@@ -1,5 +1,5 @@
 package com.kitap.pageobjects;
-import org.openqa.selenium.By;      
+import org.openqa.selenium.By;        
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement; 
@@ -29,10 +29,10 @@ public class AccountListPage extends SFPageBase {
 	 * @Description: This method performs clicking on new button on the account's page
 	 * @Param: accepts one argument label as input
 	 * @return values: opens new accounts page
-	 */
+    */
 	public void clicknew(String label) throws Exception {
 		try{
-			clickSFbutton("New");
+			clickSFbutton(label);
 		}
 		catch (Exception e)
 		{
@@ -60,6 +60,7 @@ public class AccountListPage extends SFPageBase {
 			System.out.println("In catch" +label);
 		}
 	}
+    
 
 	/*
 	 * @KT1444
@@ -690,7 +691,7 @@ public class AccountListPage extends SFPageBase {
 	/*
 	 * @KT1444
 	 * @date: 13/07/2022
-	 * @Description: This method performs selecting save button on  account's page
+	 * @Description: This method performs clicking save button on  account's page
 	 * @Param: accepts one argument i.e label
 	 * @return values: saving record
 	 */

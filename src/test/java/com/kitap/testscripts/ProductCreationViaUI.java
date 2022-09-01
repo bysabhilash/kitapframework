@@ -1,11 +1,18 @@
 package com.kitap.testscripts;
 
 import org.testng.SkipException;
+
 import org.testng.annotations.Test;
 
 import com.kitap.base.BaseTest;
 
 import java.util.Hashtable;
+
+/*
+ * @KT1444
+ * @date: 22/07/2022
+ * @Description: This test script covers the creation of an product via UI
+ */
 
 public class ProductCreationViaUI extends BaseTest
 {
@@ -23,7 +30,7 @@ public class ProductCreationViaUI extends BaseTest
         productlistpage.clickninesymbol();
         productlistpage.enterProducts("Search apps and items...", data.get("Data_searchbar"));
         productlistpage.clickProducts();
-        productlistpage.clickSFbutton("New");
+        productlistpage.clicknew("New");
         productlistpage.setProductname("Product Name",data.get("Productname"));
         productlistpage.setProductCode("Product Code",data.get("Productcode"));
         productlistpage.setActive("Active");
