@@ -1,6 +1,7 @@
 package com.kitap.pageobjects;
 
-import java.util.List;  
+import java.util.List;
+  
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
@@ -9,6 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.apache.commons.codec.BinaryEncoder;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.BinaryDecoder;
 
 public class LightningLoginPage extends kitap.SFPageBase {
 
@@ -41,25 +45,28 @@ public class LightningLoginPage extends kitap.SFPageBase {
 
 		Thread.sleep(8000); 
      // waitForSFPagetoLoad();
-
+        
+		 String str="Jasper@143";
 		uname.sendKeys(userid);
-     	password.sendKeys(passwordtext);
+		
+		byte[] decodedString = Base64.decodeBase64(passwordtext);
+	     // System.out.println("Decoded value is " + new String(decodedString));
+	          String value = new String(decodedString);
+     	password.sendKeys(value);
      	safeClick(login_button);
 
-		waitForSFPagetoLoad();
-		try {
-
-			Alert alert = driver.switchTo().alert();
-			String alertText = alert.getText();
-			System.out.println("Alert data: " + alertText);
-			alert.accept();
-
-		} catch (NoAlertPresentException e) {
-
-		}
-
-		waitForSFPagetoLoad();
-
+		
+		  waitForSFPagetoLoad(); try {
+		  
+		  Alert alert = driver.switchTo().alert(); String alertText = alert.getText();
+		  System.out.println("Alert data: " + alertText); alert.accept();
+		  
+		  } catch (NoAlertPresentException e) {
+		  
+		  }
+		  
+		  waitForSFPagetoLoad();
+		 
 	}
 	
 	public void applauncher(String appname) throws InterruptedException {

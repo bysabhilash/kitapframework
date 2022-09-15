@@ -1,5 +1,5 @@
 package com.kitap.pageobjects;
-import org.openqa.selenium.By;        
+import org.openqa.selenium.By;         
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement; 
@@ -21,7 +21,7 @@ public class AccountListPage extends SFPageBase {
 		    super(webDriver);
 		    PageFactory.initElements(driver, this);
 	 }
-	    
+
 
 	/*
 	 * @KT1444
@@ -679,6 +679,7 @@ public class AccountListPage extends SFPageBase {
 
 		try {
 			setText(label, data);
+			waitForSFPagetoLoad();
 			
 		}
 		catch (Exception e)
@@ -708,14 +709,6 @@ public class AccountListPage extends SFPageBase {
 
 	}
 	
-	/*
-	 * @KT1461
-	 * @date: 16/08/2022
-	 * @Description: This method performs clicking delete button on  account's page
-	 * @Param: accepts one argument i.e label
-	 * @return values: deleting saved records
-	 */
-	
 	public void clickdelete(String label) throws Exception {
 		try{
 			delete(label);
@@ -729,3 +722,5 @@ public class AccountListPage extends SFPageBase {
 
 	}
 }
+	
+	

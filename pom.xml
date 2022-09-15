@@ -249,7 +249,7 @@
 						 <version>2.22.2</version>
                          <configuration>         
 							<suiteXmlFiles>	<!-- Specify the TestNG XML file you want to run over here -->
-								<suiteXmlFile>src/test/resources/all-tests-chrome.xml</suiteXmlFile>
+								<suiteXmlFile>testng.xml</suiteXmlFile>
 							</suiteXmlFiles>
 						</configuration>
 					</plugin>

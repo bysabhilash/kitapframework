@@ -178,7 +178,7 @@ public class BaseTest implements PropertyReader {
 
 	@BeforeSuite(alwaysRun = true)
 	@Parameters({ "browserType" })
-	public void setupWebDriver(@Optional("edge") String browserType) throws IOException, InterruptedException {
+	public void setupWebDriver(@Optional("chrome") String browserType) throws IOException, InterruptedException {
 		
 		readConfigJsonFile();
 

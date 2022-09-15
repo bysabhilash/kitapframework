@@ -641,7 +641,8 @@ js.executeScript("arguments[0].setAttribute('style', 'background: green; border:
 		return element.getText();
 	}
 
-	public void safeClick(WebElement element) {
+	public void safeClick(WebElement element) throws InterruptedException {
+		Thread.sleep(3000);
 		if ((element != null) && (element.isDisplayed())) {
 			element.click();
 		} else {

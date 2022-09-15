@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Test Suite for Chat" thread-count="4" verbose="5">
-	<parameter name="browserType" value="edge" />
+	<parameter name="browserType" value="chrome" />
 	<test name="smoke_test" preserve-order="true">
 		<classes>
       <class name="com.kitap.testscripts.AccountCreationViaUI"/>
@@ -26,7 +26,10 @@
 	  <class name="com.kitap.testscripts.ContractsCreationViaUI"/>
 	  <class name="com.kitap.testscripts.AlternativePaymentCreationViaUI"/>	  
 	  <class name="com.kitap.testscripts.ReturnOrderCreationViaUI"/>	  
-	  <class name="com.kitap.testscripts.ProductCreationViaUI"/>	  	  
+	  <class name="com.kitap.testscripts.ProductCreationViaUI"/>
+	  <class name="com.kitap.testscripts.WorkOrderCreationViaUI"/>	  
+	  <class name="com.kitap.testscripts.ServiceAppointmentCreationViaUI"/>	  
+	  <class name="com.kitap.testscripts.ShiftCreationViaUI"/>		  	  
     </classes>
 	</test>
 </suite>

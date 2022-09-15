@@ -30,10 +30,16 @@ import kitap.SFPageBase;
 		* @return values: opens new workorder's page
 		*/
 		public void clicknewbutton(String label) throws Exception {
-		
-		clickSFbutton(label);
-		
-		}
+		 try{
+	            clickSFbutton(label);
+	            waitForSFPagetoLoad();
+	        }
+	        catch (Exception c)
+	        {
+	            System.out.println("In catch"+label);
+	        }
+	
+	    }
 		    /*
 		 * @KT1461
 		 * @date: 03/08/2022
@@ -42,11 +48,15 @@ import kitap.SFPageBase;
 		 * @return values: selecting status
 		 */
 		public void selectstatus(String label, String data) throws Exception {
-		
-		selectdropdown(label,data);
-		waitForSFPagetoLoad();
-		
-		}
+		 try{
+	            selectdropdown(label,data);
+	            waitForSFPagetoLoad();
+	        }
+	        catch (Exception e)
+	        {
+	            System.out.println("In Catch" +label);
+	        }
+	    }
 		    /*
 		 * @KT1461
 		 * @date: 03/08/2022
@@ -55,11 +65,20 @@ import kitap.SFPageBase;
 		 * @return values: selecting parent work order
 		 */
 		public void selectparentworkorder(String label, String data) throws Exception {
-		selectcombobox(label, data);
-		waitForSFPagetoLoad();
+			{
+
+		        try {
+		        	selectcombobox(label,data);
+		            waitForSFPagetoLoad();
+		        }
+		        catch (Exception e)
+		        {
+		            System.out.println("In catch"+label);
+		        }
+		    }
 		}
 		
-		    /*
+	    /*
 		 * @KT1461
 		 * @date: 03/08/2022
 		 * @Description: This method performs selecting account on workorder's page
@@ -67,9 +86,18 @@ import kitap.SFPageBase;
 		 * @return values: selecting account
 		 */
 		public void selectaccount(String label, String data) throws Exception {
-		selectcombobox(label, data);
-		waitForSFPagetoLoad();
-		}
+		{
+
+	        try {
+	        	selectcombobox(label,data);
+	            waitForSFPagetoLoad();
+	        }
+	        catch (Exception e)
+	        {
+	            System.out.println("In catch"+label);
+	        }
+	    }
+	}
 		    /*
 		 * @KT1461
 		 * @date: 03/08/2022
@@ -78,11 +106,20 @@ import kitap.SFPageBase;
 		 * @return values: selecting cases
 		 */
 		public void selectcases(String label, String data) throws Exception {
-		selectcombobox(label, data);
-		waitForSFPagetoLoad();
-		}
+		{
+
+	        try {
+	        	selectcombobox(label,data);
+	            waitForSFPagetoLoad();
+	        }
+	        catch (Exception e)
+	        {
+	            System.out.println("In catch"+label);
+	        }
+	    }
+	}
 		
-		    /*
+	   /*
 		 * @KT1461
 		 * @date: 03/08/2022
 		 * @Description: This method performs selecting Priority on workorder's page
@@ -91,10 +128,16 @@ import kitap.SFPageBase;
 		 */
 		public void selectpriority(String label,String data) throws Exception {
 		
-		selectdropdown(label,data);
-		
-		}
-		    /*
+		 try{
+	            selectdropdown(label,data);
+	            waitForSFPagetoLoad();
+	        }
+	        catch (Exception e)
+	        {
+	            System.out.println("In Catch" +label);
+	        }
+	    }
+		/*
 		 * @KT1461
 		 * @date: 03/08/2022
 		 * @Description: This method performs selecting contact on workorder's page
@@ -102,9 +145,18 @@ import kitap.SFPageBase;
 		 * @return values: selecting contact
 		 */
 		public void selectcontact(String label, String data) throws Exception {
-		selectcombobox(label, data);
-		waitForSFPagetoLoad();
-		}
+		{
+
+	        try {
+	        	selectcombobox(label,data);
+	            waitForSFPagetoLoad();
+	        }
+	        catch (Exception e)
+	        {
+	            System.out.println("In catch"+label);
+	        }
+	    }
+	}
 		    /*
 		 * @KT1461
 		 * @date: 03/08/2022
@@ -113,9 +165,18 @@ import kitap.SFPageBase;
 		 * @return values: selecting asset
 		 */
 		public void selectasset(String label, String data) throws Exception {
-		selectcombobox(label, data);
-		waitForSFPagetoLoad();
-		}
+		{
+
+	        try {
+	        	selectcombobox(label,data);
+	            waitForSFPagetoLoad();
+	        }
+	        catch (Exception e)
+	        {
+	            System.out.println("In catch"+label);
+	        }
+	    }
+	}
 		
 		    /*
 		 * @KT1461
@@ -125,9 +186,18 @@ import kitap.SFPageBase;
 		 * @return values: selecting entitlement
 		 */
 		public void selectentitlement(String label, String data) throws Exception {
-		selectcombobox(label, data);
-		waitForSFPagetoLoad();
-		}
+		{
+
+	        try {
+	        	selectcombobox(label,data);
+	            waitForSFPagetoLoad();
+	        }
+	        catch (Exception e)
+	        {
+	            System.out.println("In catch"+label);
+	        }
+	    }
+	}
 		
 		    /*
 		 * @KT1461
@@ -138,10 +208,17 @@ import kitap.SFPageBase;
 		 */
 		public void setsubject(String label,String data) throws Exception {
 		
-		setinput(label,data);
+		try {
+			setinput(label,data);
+			waitForSFPagetoLoad();
+	       }
+		 catch (Exception e)
+        {
+            System.out.println("In catch"+label);
+        }
 		
 		}
-		    /*
+	    /*
 		 * @KT1461
 		 * @date: 03/08/2022
 		 * @Description: This method performs entering Description on workorder's page
@@ -150,10 +227,18 @@ import kitap.SFPageBase;
 		 */
 		public void setdescription(String label,String data) throws Exception {
 		
-		setinput(label,data);
+		try {
+			setinput(label,data);
+			waitForSFPagetoLoad();
+	       }
+		 catch (Exception e)
+        {
+            System.out.println("In catch"+label);
+        }
 		
 		}
-		    /*
+		
+		/*
 		 * @KT1461
 		 * @date: 03/08/2022
 		 * @Description: This method performs saving workorder's page
@@ -162,8 +247,14 @@ import kitap.SFPageBase;
 		 */
 		public void clicksavebutton(String label) throws Exception {
 		
+       try {
 		click(label);
-		waitForSFPagetoLoad();
+		waitForSFPagetoLoad();	
+		}
+       catch (Exception e)
+       {
+           System.out.println("In catch"+label);
+       }
 		
 		}
-		}
+}

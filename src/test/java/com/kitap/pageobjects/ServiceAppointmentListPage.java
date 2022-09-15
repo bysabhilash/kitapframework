@@ -1,6 +1,6 @@
 package com.kitap.pageobjects;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.By; 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,59 +14,8 @@ public class ServiceAppointmentListPage extends SFPageBase
     public ServiceAppointmentListPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(driver, this);
-    }
-    
-    @FindBy(xpath = "//div[@class='slds-icon-waffle']")
-    private WebElement ninesymbol;
-
-    @FindBy(xpath="//*[@id=\"ServiceAppointment\"]/div/lightning-formatted-rich-text/span/p")
-    private WebElement clickserviceappointment;
-
-    /*
-     * @KT1444
-     * @date: 18/08/2022
-     * @Description: This method performs clicking on app launcher in the salesforce home page
-     * @return values: opens app launcher
-     */
-
-    public void clickninesymbol() throws InterruptedException
-    {
-        SFClick(ninesymbol);
-        waitForSFPagetoLoad();
-    }
-
-    /*
-     * @KT1444
-     * @date: 18/08/2022
-     * @Description: This method performs entering input as service appointment in app launcher of salesforce home page
-     * @Param: accepts two Param  label and value as input
-     * @return values: opens service appointment page
-     */
-	
-	  public void enterServiceAppointment(String label,String data) throws Exception {
-	  
-	  try { 
-		  setText(label, data); 
-		  waitForSFPagetoLoad(); 
-		  } 
-	  catch (Exception e) 
-	  {
-	  System.out.println("Unable to enter " +label);
-	  } 
-	  }
-	  
-	  /*
-	     * @KT1444
-	     * @date: 18/08/2022
-	     * @Description: This method performs clicking on the service appointment page
-	     * @return values: opens new service appointment page
-	     */
-	    public void clickemailtemplates() throws InterruptedException {
-
-	        SFClick(clickserviceappointment);
-	        waitForSFPagetoLoad();
-	    }
-	    
+    } 
+	 
 	    /*
 	     * @KT1444
 	     * @date: 18/08/2022
@@ -112,6 +61,27 @@ public class ServiceAppointmentListPage extends SFPageBase
     /*
      * @KT1444
      * @date: 18/08/200
+     * @Description: This method performs enterscontact name on the service appointment page
+     * @Param: accepts two Param label and value as input
+     * @return values: populates contact name
+     */
+
+    public void setparentaccount(String label, String data) throws InterruptedException
+    {
+
+        try {
+        	selectcombobox(label,data);
+            waitForSFPagetoLoad();
+        }
+        catch (Exception e)
+        {
+            System.out.println("In catch"+label);
+        }
+    }
+    
+    /*
+     * @KT1444
+     * @date: 18/08/200
      * @Description: This method performs enters description on the service appointment page
      * @Param: accepts two Param label and value as input
      * @return values: populates description
@@ -120,7 +90,7 @@ public class ServiceAppointmentListPage extends SFPageBase
     public void setDescription(String label, String data)
     {
         try{
-            setinput(label,data);
+            settext(label,data);
             waitForSFPagetoLoad();
         }
         catch (Exception e)
@@ -204,7 +174,7 @@ public class ServiceAppointmentListPage extends SFPageBase
     public void setAddress(String label, String data)
     {
         try{
-            setinput(label,data);
+            settext(label,data);
             waitForSFPagetoLoad();
         }
         catch (Exception e)
@@ -642,6 +612,14 @@ public class ServiceAppointmentListPage extends SFPageBase
         }
 
     }
+    
+    /*
+	 * @KT1444
+	 * @date: 18/08/2022
+	 * @Description: This method performs saving serviceappointment page
+	 * @Param: accepts argument label as input
+	 * @return values: saving record
+	 */
 
     public void clicksave(String label) throws Exception {
         try{

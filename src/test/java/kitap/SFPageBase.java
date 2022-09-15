@@ -429,6 +429,7 @@ public class SFPageBase extends PageBase {
 		  we2= driver.findElement(By.xpath("//span[text()='" + label + "']//following::a[text()='" + targetvalue + "'][1]"));
 		  waitForSFPagetoLoad();
 		  we2.click();
+		  waitForSFPagetoLoad();
 	      System.out.println("Sent values as " + targetvalue);
 		  }
 		 
@@ -620,7 +621,7 @@ public class SFPageBase extends PageBase {
 		  try { 
 		  if(!label.isEmpty()) { 
 		  try { 
-		    we = driver.findElement(By.xpath("////span[text()='" + label +"']//following::input[1]")); 
+		    we = driver.findElement(By.xpath("//label//span[text()='" + label + "']//following::input[1]"));
 		    we.click();
 			we.sendKeys(targetvalue);	
 			waitForSFPagetoLoad();   
@@ -643,7 +644,7 @@ public class SFPageBase extends PageBase {
 	}
 		  catch(Exception e) 
 		  { 
-			  System.out.println("Given "  +  targetvalue  +  " Dropdown elements are not bale select by usinng selectcombobox method "); 
+			  System.out.println("Given "  +  targetvalue  +  " Dropdown elements are not able select by usinng selectcombobox method "); 
 			  }
 		  
 		  }
@@ -668,12 +669,15 @@ public class SFPageBase extends PageBase {
 	      try {
 	       if(!label.isEmpty()) {
 	      try {
-	    	  we = driver.findElement(By.xpath("(//span[text()='Show Actions']//ancestor::a[@role='button'])[1]"));  
+	    	  we = driver.findElement(By.xpath("//span[text()='Show more actions']//ancestor::button"));  
 	          we.click();           
 	          waitForSFPagetoLoad();
 	          we2=driver.findElement(By.xpath("//a//span[text()='Delete']"));
 	          we2.click();
-	          we3=driver.findElement(By.xpath("//button//span[text()='" + label +"']"));
+	          waitForSFPagetoLoad();
+	          we3=driver.findElement(By.xpath("//button//span[text()='" + label + "']"));
+	          we3.click();
+	          waitForSFPagetoLoad();
 	          System.out.println("account was " + label);
 	        
 	        
@@ -742,7 +746,7 @@ public class SFPageBase extends PageBase {
 				try {
 					if (ele.get(i).getText().equalsIgnoreCase(label))
 						try {
-							we = driver.findElement(By.xpath("//span[text()='" + label + "']//following::textarea"));
+							we = driver.findElement(By.xpath("//span[text()='" + label + "']//following::textarea[1]"));
 							we.sendKeys(targetvalue);
 						    waitForSFPagetoLoad();
 							we.sendKeys(Keys.ENTER);

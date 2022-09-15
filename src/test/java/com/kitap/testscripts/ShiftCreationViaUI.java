@@ -1,11 +1,17 @@
 package com.kitap.testscripts;
 
-import org.testng.SkipException;
+import org.testng.SkipException; 
 import org.testng.annotations.Test;
 
 import com.kitap.base.BaseTest;
 
 import java.util.Hashtable;
+
+/*
+ * @KT1461
+ * @date: 22/08/2022
+ * @Description: This test script covers the creation of an shift creation via UI
+ */
 
 public class ShiftCreationViaUI extends BaseTest {
     @Test(dataProviderClass = com.kitap.utilities.TestUtil.class, dataProvider = "dp")
@@ -27,8 +33,8 @@ public class ShiftCreationViaUI extends BaseTest {
         shiftpage.setstatus("Status",data.get("status"));
         shiftpage.settimeslottype("Time Slot Type",data.get("typeoftimeslot"));
         shiftpage.enterworktypegroup("Work Type Group",data.get("groups"));
-        shiftpage.enterserviceterritory("Service Territory",data.get("serviceterritory"));
-       // shiftpage.enterserviceresource("Service Resource", data.get("serviceresources"));
+        //shiftpage.enterserviceterritory("Service Territory",data.get("serviceterritory"));
+        shiftpage.enterserviceresource("Service Resource", data.get("serviceresources"));
         shiftpage.setlabel("Label",data.get("label"));
         shiftpage.clicksave("Save");
     }
