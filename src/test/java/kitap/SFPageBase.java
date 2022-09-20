@@ -322,7 +322,7 @@ public class SFPageBase extends PageBase {
 			      }
 
 			   } catch (Exception e) {
-			      System.out.println("Given " + targetvalue + " Dropdown elements are not bale select by usinng selectOption method ");
+			      System.out.println("Given " + targetvalue + " Dropdown elements are not able select by usinng selectOption method ");
 			   }
 			}
 		 /*
@@ -549,7 +549,7 @@ public class SFPageBase extends PageBase {
 	}
 		  catch(Exception e) 
 		  { 
-			  System.out.println("Given "  + targetvalue +  " Dropdown elements are not bale select by usinng selectdropdown1 method "); 
+			  System.out.println("Given "  + targetvalue +  " Dropdown elements are not able select by usinng selectdropdown1 method "); 
 			  }
 		  
 		  }
@@ -602,7 +602,7 @@ public class SFPageBase extends PageBase {
 	}
 		  catch(Exception e) 
 		  { 
-			  System.out.println("Given "  + targetvalue +  " Dropdown elements are not bale select by usinng selectimgclick method "); 
+			  System.out.println("Given "  + targetvalue +  " Dropdown elements are not able select by usinng selectimgclick method "); 
 			  }
 		  
 		  }

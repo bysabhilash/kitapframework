@@ -1,6 +1,6 @@
 package com.kitap.testscripts;
 
-import java.util.Hashtable;     
+import java.util.Hashtable;      
 
 import org.testng.SkipException;
 import org.testng.annotations.Test;

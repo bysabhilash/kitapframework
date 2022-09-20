@@ -46,7 +46,7 @@ public class AccountListPageClassic {
 
        driver.findElement(By.xpath("//input[@title='New']")).click();
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id='acc2']")).sendKeys("Mliwardbwown");
+        driver.findElement(By.xpath("//input[@id=string(//label[text()='Account Name']/@for)]")).sendKeys("Mliwardbwown");
         driver.findElement(By.xpath("//input[@name='acc5']")).sendKeys("98345612");
         driver.findElement(By.xpath("//input[@id='acc23']")).sendKeys("http://wwww.mb.com");
         
@@ -106,7 +106,7 @@ public class AccountListPageClassic {
         
         Alert a = driver.switchTo().alert();
         a.accept();
-        Thread.sleep(000);
+        Thread.sleep(3000);
         
         driver.quit();
 
