@@ -1,6 +1,6 @@
 package com.kitap.base;
 
-import java.io.File;      
+import java.io.File;            
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,8 +19,12 @@ import org.apache.logging.log4j.Logger;
 import org.dom4j.util.UserDataAttribute;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -32,6 +36,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.jayway.jsonpath.DocumentContext;
@@ -42,7 +47,11 @@ import com.kitap.pageobjects.AssetPage;
 import com.kitap.pageobjects.BankingManagementListPage;
 import com.kitap.pageobjects.CampaignsPage;
 import com.kitap.pageobjects.CardPaymentMethodListPage;
+import com.kitap.pageobjects.CaseServiceApproval;
 import com.kitap.pageobjects.CasesListPage;
+import com.kitap.pageobjects.CasesWarranty;
+import com.kitap.pageobjects.CasesWarrantyClaim;
+import com.kitap.pageobjects.CaseslistApprovalpage;
 import com.kitap.pageobjects.ChangeRequestListPage;
 import com.kitap.pageobjects.ContactListPage;
 import com.kitap.pageobjects.ContactRequestListPage;
@@ -81,6 +90,7 @@ import com.kitap.pageobjects.WorkStepTemplatesListPage;
 import com.kitap.pageobjects.Worktype;
 import com.kitap.utilities.ExcelReader;
 
+
 import kitap.GetSFApps;
 import kitap.HTTPClientWrapper;
 import kitap.PageBase;
@@ -91,12 +101,16 @@ import kitap.PageBase;
 */
 
 public class BaseTest implements PropertyReader {
-
+	
+	
+	
+	
 	public static final Logger logger = LogManager.getLogger(BaseTest.class);
 
 	private static final String InstalledVersionDetailPage = null;
 
 	protected static WebDriver driver;
+	 public static String screenShotDestinationPath;
 
 	protected static Actions action;
 	protected LightningLoginPage lightningloginpage;
@@ -142,12 +156,17 @@ public class BaseTest implements PropertyReader {
 	protected WorkStepTemplatesListPage worksteptemplateslistpage;
 	protected StreamingChannelsListPage streamingchannelslistpage;
 	protected HospitalManagementListPage hospitalmanagementlistpage;
+	protected CaseslistApprovalpage casesapprovalpage;
+	protected CasesWarrantyClaim caseswarrantyclaimpage;
+	protected CasesWarranty caseswarrantypage;
+	protected CaseServiceApproval casesserviceapproval;
 	
 	public static String SFBaseURL; 
 
 	protected static PageFactory pageFactory = null;
 	protected Properties staticData = getStaticData();
-	protected URL huburl = null;
+	protected String huburl = null;
+	//protected String huburl = "http://localhost:4444/wd/hub";
 	protected static EmailUtils emailUtils;
 
 	public static String env;
@@ -162,7 +181,7 @@ public class BaseTest implements PropertyReader {
 
 	final String SFAPITOKEN_UAT = "I9AIshlr6hhpSvjnLIVjIcaC";
 
-	final String SFAPIPASSWORDSTRING_UAT = "Jasper@143";
+	final String SFAPIPASSWORDSTRING_UAT = "Abhilash@143";
 
 	
 	final String SFAPIPASSWORD_UAT = SFAPIPASSWORDSTRING_UAT + SFAPITOKEN_UAT;
@@ -178,13 +197,13 @@ public class BaseTest implements PropertyReader {
 
 	@BeforeSuite(alwaysRun = true)
 	@Parameters({ "browserType" })
-	public void setupWebDriver(@Optional("chrome") String browserType) throws IOException, InterruptedException {
+	public void setupWebDriver(String browserType) throws IOException, InterruptedException {
 		
 		readConfigJsonFile();
 
 		if ((driver == null)) {
 			logger.info("setupWebDriver()");
-			driver = WebDriverFactory.createInstance(huburl, browserType);
+		    driver = WebDriverFactory.createInstance(huburl, browserType);			
 			action = new Actions(driver);
 			pageFactory = new PageFactory(driver);
 
@@ -195,6 +214,7 @@ public class BaseTest implements PropertyReader {
 			System.out.println("Window height: " + driver.manage().window().getSize().getHeight());
 			
 		}
+		
 	}
 	
 	/*@author: KT1456 
@@ -282,9 +302,23 @@ public class BaseTest implements PropertyReader {
 	}
 
 	@BeforeTest(alwaysRun = true)
-	public void cleanTestSetup() {
-		driver.manage().deleteAllCookies();
-	}
+	
+	  public void cleanTestSetup() { 
+		driver.manage().deleteAllCookies(); 
+		}
+	 
+	/*
+	 * public void sample() throws Throwable {
+	 * 
+	 * ExtentHtmlReporter htmlreporter=new ExtentHtmlReporter("extent.html");
+	 * 
+	 * report= new ExtentReports(); report.attachReporter(htmlreporter);
+	 * 
+	 * log=report.createTest("My TestSuite", "Myreport");
+	 */
+			
+		
+//}	
 
 	@BeforeClass(alwaysRun = true)
 	protected void setUp() throws MessagingException {
@@ -337,6 +371,10 @@ public class BaseTest implements PropertyReader {
 		locationGroupsListPage = (LocationGroupsListPage)pageFactory.getPageObject(LocationGroupsListPage.class.getName());
 		workPlanTemplatesListPage = (WorkPlanTemplatesListPage)pageFactory.getPageObject(WorkPlanTemplatesListPage.class.getName());
 		hospitalmanagementlistpage = (HospitalManagementListPage)pageFactory.getPageObject(HospitalManagementListPage.class.getName());
+		casesapprovalpage = (CaseslistApprovalpage)pageFactory.getPageObject(CaseslistApprovalpage.class.getName());
+		caseswarrantyclaimpage = (CasesWarrantyClaim)pageFactory.getPageObject(CasesWarrantyClaim.class.getName());
+		caseswarrantypage = (CasesWarranty)pageFactory.getPageObject(CasesWarranty.class.getName());
+		casesserviceapproval=(CaseServiceApproval)pageFactory.getPageObject(CaseServiceApproval.class.getName());
 	}                                                           
 	
 	/*@author: KT1456 
@@ -347,28 +385,35 @@ public class BaseTest implements PropertyReader {
 
 
 	@AfterMethod(alwaysRun = true)
-	public void tearDownandCaptureScreenShot(Method method, ITestResult result) {
-		if (ITestResult.FAILURE == result.getStatus()) {
-			try {
-				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddhhmmss");
-				String currentdatetime = simpleDateFormat.format(new Date());
-				File source = captureScreenShot();
-				FileUtils.copyFile(source, new File(System.getProperty("user.dir")
-						+ "/target/surefire-reports/FailedScreenShots/" + result.getName() + currentdatetime + ".png"));
-				Reporter.log("Screenshot taken");
-			} catch (Exception e) {
-
-				Reporter.log("Exception while taking screenshot " + e.getMessage());
-			}
-		}
-		logger.info("*************");
-		logger.info("Ending Test  ---->" + method.getName());
-
-	}
-
-	public File captureScreenShot() {
-		return new PageBase(driver).takeScreenshot();
-	}
+	
+	  public void tearDownandCaptureScreenShot(Method method, ITestResult result) {
+	  if (ITestResult.FAILURE == result.getStatus()) { try { SimpleDateFormat
+	  simpleDateFormat = new SimpleDateFormat("yyyyMMddhhmmss"); String
+	  currentdatetime = simpleDateFormat.format(new Date()); File source =
+	  captureScreenShot(); FileUtils.copyFile(source, new
+	  File(System.getProperty("user.dir") +
+	  "/target/surefire-reports/FailedScreenShots/" + result.getName() +
+	  currentdatetime + ".png")); Reporter.log("Screenshot taken"); } catch
+	  (Exception e) {
+	  
+	  Reporter.log("Exception while taking screenshot " + e.getMessage()); } }
+	  logger.info("*************"); logger.info("Ending Test  ---->" +
+	  method.getName());
+	  
+	  }
+	  
+	  public File captureScreenShot() { return new
+	  PageBase(driver).takeScreenshot(); }
+	 
+	/*
+	 * public void aftermymethod(ITestResult result) {
+	 * 
+	 * if(result.getStatus()==ITestResult.FAILURE) {
+	 * log.fail(result.getThrowable().getMessage()); } else { log.pass("passed"); }
+	 * report.flush();
+	 * 
+	 * }
+	 */
 
 	@AfterClass(alwaysRun = true)
 	public void deleteAllCookies() {
@@ -450,5 +495,30 @@ public class BaseTest implements PropertyReader {
 		return getSfApps.getAppNavURL(appname);
 
 	}
+	
+	public static String takeSnapShot(String name) throws IOException {
+		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+		String destFile = System.getProperty("user.dir") + "\\target\\screenshots\\" + timestamp() + ".png";
+		screenShotDestinationPath = destFile;
+		
+		try {
+			FileUtils.copyFile(srcFile, new File(destFile));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return name;
+		
+	}
+	
+	public static String timestamp() {
+		return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
+	}
+	
+	public static String getScreenshotDestinationPath() {
+		return screenShotDestinationPath;
+	}
+	
 
 }

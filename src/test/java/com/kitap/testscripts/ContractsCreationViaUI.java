@@ -1,7 +1,8 @@
 package com.kitap.testscripts;
 
-import java.util.Hashtable;   
+import java.util.Hashtable;
 
+import org.openqa.selenium.By;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
@@ -28,9 +29,24 @@ public class ContractsCreationViaUI extends BaseTest {
         
         lightningloginpage.login(SFUserId, SFPassword);
         
-        lightningloginpage.applauncher("Contract");
+       // lightningloginpage.applauncher("Contract");
        
-        contractpage.clicknewbutton("New");
+      //  contractpage.clicknewbutton("New");
+        
+		
+		  driver.findElement(By.xpath("(//span[@class='uiImage'])[1]")).click();
+		  Thread.sleep(3000);
+		  
+		  driver.findElement(By.
+		  xpath("//a[normalize-space()='Switch to Salesforce Classic']")).click();
+		  Thread.sleep(6000);
+		  
+		  driver.findElement(By.xpath("//a[text()='Contracts']")).click();
+		  Thread.sleep(6000);
+		  
+		  driver.findElement(By.xpath("//input[@title='New']")).click();
+		  Thread.sleep(2000);
+		 
  
         contractpage.selectaccountname("Account Name",data.get("accountname"));
         

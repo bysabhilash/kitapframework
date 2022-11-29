@@ -1,6 +1,6 @@
 package com.kitap.pageobjects;
 
-import org.openqa.selenium.By;     
+import org.openqa.selenium.By;      
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement; 
@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import kitap.SFPageBase;
+import kitap.SFPageClassic;
 
  /*
  * @KT1461
@@ -350,6 +351,7 @@ public class BankingManagementListPage extends SFPageBase {
 
 		try {
 			setText(label, data);
+			waitForSFPagetoLoad();
 			
 		}
 		catch (Exception e)
@@ -371,7 +373,6 @@ public class BankingManagementListPage extends SFPageBase {
 	public void clicksave(String label) throws Exception {
 		try{
 			clickSFbutton(label);
-			waitForSFPagetoLoad();
 			
 		}
 		catch (Exception c)

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import kitap.SFPageBase;
+import kitap.SFPageClassic;
 
 /*
  * @KT1461
@@ -34,7 +35,7 @@ public class ContractsPage extends SFPageBase {
 
 	    	try {
 	    	      clickSFbutton(label);
-	    	       waitForSFPagetoLoad();
+	    	      
 	    	 }
 	    	catch (Exception e)
 			{
@@ -55,7 +56,7 @@ public class ContractsPage extends SFPageBase {
 	    	
 	    	try {
 	              selectcombobox(label, data);
-	              waitForSFPagetoLoad();
+	          
 	      }
 	    	catch (Exception e)
 			{
@@ -75,7 +76,7 @@ public class ContractsPage extends SFPageBase {
 	    public void selectcustomersignedby(String label,String data) throws Exception {
 	    	try {
 	              selectcombobox(label, data);
-	              waitForSFPagetoLoad();
+	             
 	      }
 	    	catch (Exception e)
 			{
@@ -134,8 +135,8 @@ public class ContractsPage extends SFPageBase {
 	    
 	    public void selectpricebooks(String label,String data) throws Exception {
 	    	try {
-    	        selectdropdown(label,data);
-    	        waitForSFPagetoLoad();
+	    		selectcombobox(label,data);
+    	        
     }
     	catch (Exception e)
 		{
@@ -157,7 +158,7 @@ public class ContractsPage extends SFPageBase {
 
 	    	try {
 	    	        selectdropdown(label,data);
-	    	        waitForSFPagetoLoad();
+	    	       
 	    }
 	    	catch (Exception e)
 			{
@@ -218,7 +219,7 @@ public class ContractsPage extends SFPageBase {
 
 	    	try {
     	        selectdropdown(label,data);
-    	        waitForSFPagetoLoad();
+    	       
 		    }
 		    	catch (Exception e)
 				{
@@ -239,7 +240,7 @@ public class ContractsPage extends SFPageBase {
 	    	
 	    	try {
 	    	selectcombobox(label, data);
-		       waitForSFPagetoLoad();
+		       
 	    }
 	    	catch (Exception e)
 			{
@@ -280,7 +281,7 @@ public class ContractsPage extends SFPageBase {
 	    public void setbillingstreet(String label,String data) throws Exception {
 
 	    	try {
-		    	settext1(label,data);    	   
+	    		settext(label,data);    	   
 		    }
 		    	catch (Exception e)
 				{
@@ -385,7 +386,7 @@ public class ContractsPage extends SFPageBase {
 	    public void setspecialterms(String label,String data) throws Exception {
 
 	    	try {
-		    	settext1(label,data);    	   
+	    		settext(label,data);    	   
 		    }
 		    	catch (Exception e)
 				{
@@ -406,7 +407,7 @@ public class ContractsPage extends SFPageBase {
 	    public void setdescription(String label,String data) throws Exception {
 
 	    	try {
-		    	settext1(label,data);    	   
+	    		settext(label,data);    	   
 		    }
 		    	catch (Exception e)
 				{

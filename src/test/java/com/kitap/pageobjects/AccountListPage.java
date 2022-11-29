@@ -1,5 +1,5 @@
 package com.kitap.pageobjects;
-import org.openqa.selenium.By;         
+import org.openqa.selenium.By;          
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement; 
@@ -16,12 +16,51 @@ import kitap.SFPageBase;
  */
 
 public class AccountListPage extends SFPageBase {
+	
+	
+	    @FindBy(xpath = "//div[@class='slds-icon-waffle']")
+	    private WebElement ninesymbol;
 
+
+	    @FindBy(xpath = "//*[@id=\"Account\"]/div/lightning-formatted-rich-text/span/p/b")
+	    private WebElement accounts;
+
+
+	    
+	    
 	 public AccountListPage(WebDriver webDriver) {
 		    super(webDriver);
 		    PageFactory.initElements(driver, this);
 	 }
+	 
+	 public void clickninesymbol() {
+	        try {
 
+	            SFClick(ninesymbol);
+	        } catch (Exception e) {
+	            System.out.println("in catch");
+	        }
+	    }
+	 
+	 
+	 public void enteraccounts(String label, String data) throws Exception {
+
+	        try {
+	            setText(label, data);
+	        } catch (Exception e) {
+	            System.out.println("In catch" + label);
+	        }
+	    }
+
+	 
+	 public void clickaccounts() throws InterruptedException {
+
+	        SFClick(accounts);
+	        waitForSFPagetoLoad();
+
+	        }
+	 
+	 
 
 	/*
 	 * @KT1444
@@ -33,6 +72,7 @@ public class AccountListPage extends SFPageBase {
 	public void clicknew(String label) throws Exception {
 		try{
 			clickSFbutton(label);
+			waitForSFPagetoLoad();
 		}
 		catch (Exception e)
 		{

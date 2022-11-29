@@ -1,6 +1,7 @@
 package com.kitap.testscripts;
-import java.util.Hashtable ;  
+import java.util.Hashtable ;
 
+import org.openqa.selenium.By;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
@@ -28,10 +29,32 @@ public class ContactsCreationViaUI extends BaseTest {
         
         lightningloginpage.login(SFUserId, SFPassword);
         
-        lightningloginpage.applauncher("Contact");
+        //lightningloginpage.applauncher("Contact");
+        
+        contactpage.clickninesymbol();
+        
+        contactpage.entercontacts("Search apps and items...", data.get("Data_searchbar"));
+        
+        contactpage.clickcontacts();
  
         contactpage.clicknewbutton("New");
         
+		/*
+		 * driver.findElement(By.xpath("(//span[@class='uiImage'])[1]")).click();
+		 * Thread.sleep(3000);
+		 * 
+		 * 
+		 * 
+		 * driver.findElement(By.
+		 * xpath("//a[normalize-space()='Switch to Salesforce Classic']")).click();
+		 * Thread.sleep(6000);
+		 * 
+		 * driver.findElement(By.xpath("//a[text()='Contacts']")).click();
+		 * Thread.sleep(6000);
+		 * 
+		 * driver.findElement(By.xpath("//input[@title='New']")).click();
+		 * Thread.sleep(2000);
+		 */
         contactpage.selectOption("Salutation", data.get("salutation"));
         
         contactpage.setFirstname("First Name",data.get("contactfirstname"));
@@ -42,7 +65,7 @@ public class ContactsCreationViaUI extends BaseTest {
         
           contactpage.setDepartment("Department", data.get("department"));
 		
-		  contactpage.setBirthdate("Birthdate", data.get("BirthDate"));
+	//	  contactpage.setBirthdate("Birthdate", data.get("BirthDate"));
 	        		  
 		  contactpage.selectLeadsource("Lead Source",data.get("lead"));
 		  
@@ -56,9 +79,9 @@ public class ContactsCreationViaUI extends BaseTest {
 		  
 		  contactpage.setHomenumber("Home Phone", data.get("HomeNo"));
 		  
-		  contactpage.entersearchcontact("Reports To",data.get("searchcontactname"));
+	//	  contactpage.entersearchcontact("Reports To",data.get("searchcontactname"));
 		  
-		  contactpage.enterParentAccount("Account Name",data.get("searchaccountname"));
+	//	  contactpage.enterParentAccount("Account Name",data.get("searchaccountname"));
 		  
 		  contactpage.setMobilenumber("Mobile", data.get("MobileNo"));
 		  
@@ -94,7 +117,7 @@ public class ContactsCreationViaUI extends BaseTest {
       
           contactpage.clicksavebutton("Save");
         
-          contactpage.clickdelete("Delete");
+         // contactpage.clickdelete("Delete");
 		
     }
 }

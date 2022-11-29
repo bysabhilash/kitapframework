@@ -14,11 +14,68 @@ import kitap.SFPageBase;
 
 
 public class LeadsListPage extends kitap.SFPageBase {
+	
+	    @FindBy(xpath = "//div[@class='slds-icon-waffle']")
+		private WebElement ninesymbol;
+		
+		@FindBy(xpath = "//*[@id=\"Lead\"]/div/lightning-formatted-rich-text/span/p/b")
+		private WebElement leads;
+			
 	 public LeadsListPage(WebDriver webDriver) {
 		    super(webDriver);
 		    PageFactory.initElements(driver, this);
 	 }
 	 
+	 
+	 public void clickninesymbol() throws InterruptedException {
+	    	try {
+					SFClick(ninesymbol);
+					 waitForSFPagetoLoad();
+		     }
+	    	 catch (Exception e)
+	        {
+	            System.out.println("In catch" );
+	        }
+	    }
+	    
+	    /*
+	     * @KT1461
+	     * @date: 18/07/2022
+	     * @Description: This method performs entering input as asset in app launcher of salesforce home page
+	     * @Param: accepts two Param  label and value as input
+	     * @return values: related screen name appear in applauncher
+	     */
+	    
+	    public void enterasset(String label,String data) throws Exception {
+
+	        try {
+	            setText(label, data);
+	        }
+	        catch (Exception e)
+	        {
+	            System.out.println("In catch" +label);
+	        }
+	    }
+	    
+	    /*
+	     * @KT1461
+	     * @date: 18/07/2022
+	     * @Description: This method performs clicking on new button on the asset page
+	     * @return values: opens dashboard page 
+	     */
+
+	    public void clickleads() throws InterruptedException {
+	    	
+	    	try {
+				SFClick(leads);
+				 waitForSFPagetoLoad();
+	     }
+ 	 catch (Exception e)
+     {
+         System.out.println("In catch" );
+     }
+ }
+	    
 	 
 
 

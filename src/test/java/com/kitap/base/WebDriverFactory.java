@@ -35,7 +35,7 @@ public class WebDriverFactory {
 	 * @Purpose: This class helps in setting up the webdriver dynamically as per the
 	 * parameters passed from BaseTest class. 🏭
 	 */
-
+	
 	static Logger log = LogManager.getLogger(WebDriverFactory.class);
 	public final static String windowXPositionKey = "xpos";
 	public final static String windowYPositionKey = "ypos";
@@ -43,7 +43,7 @@ public class WebDriverFactory {
 	public static WebDriver startInstance(String browserName) {
 		WebDriver driver = null;
 		try {
-			URL hubUrl = null;// Set hubURL here
+			String hubUrl = null;// Set hubURL here
 			driver = WebDriverFactory.createInstance(hubUrl, browserName);
 			driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
@@ -59,8 +59,8 @@ public class WebDriverFactory {
 		return driver;
 	}
 
-	static WebDriver createInstance(URL hubUrl, String browserName) throws IOException {
-		WebDriver driver = null;
+	static WebDriver createInstance(String hubUrl, String browserName) throws IOException {
+		WebDriver driver=null ;
 		if (browserName.equalsIgnoreCase("firefox")) {
 			driver = new FirefoxDriver(createFirefoxProfile());
 		} else if (browserName.equalsIgnoreCase("chrome")) {
@@ -102,20 +102,36 @@ public class WebDriverFactory {
 		} else if (browserName.equalsIgnoreCase("safari") && isSafariSupportedPlatform()) {
 			driver = new SafariDriver();
 		} else if (browserName.equalsIgnoreCase("remote-firefox")) {
-			DesiredCapabilities capability = DesiredCapabilities.firefox();
-			driver = new RemoteWebDriver(hubUrl, capability);
+			//DesiredCapabilities capability = DesiredCapabilities.firefox();
+			//driver = new RemoteWebDriver(hubUrl, capability);
+			 final DesiredCapabilities caps = new DesiredCapabilities ();
+	           caps.setBrowserName ("firefox");
+	           driver= (new RemoteWebDriver (new URL (hubUrl), caps));
 		} else if (browserName.equalsIgnoreCase("remote-chrome")) {
-			driver = new RemoteWebDriver(hubUrl, DesiredCapabilities.chrome());
+			final DesiredCapabilities caps = new DesiredCapabilities ();
+	           caps.setBrowserName ("Chrome");
+	           driver= (new RemoteWebDriver (new URL (hubUrl), caps));
 		} else if (browserName.equalsIgnoreCase("remote-edge")) {
-			DesiredCapabilities capability = DesiredCapabilities.edge();
-			driver = new RemoteWebDriver(hubUrl, capability);
+			//DesiredCapabilities capability = DesiredCapabilities.edge();
+			//driver = new RemoteWebDriver(hubUrl, capability);
+			 final DesiredCapabilities caps = new DesiredCapabilities ();
+	           caps.setBrowserName ("MicrosoftEdge");
+	           driver= (new RemoteWebDriver (new URL (hubUrl), caps));
+		 
+			
 		} else if (browserName.equalsIgnoreCase("remote-safari")) {
 			DesiredCapabilities capability = DesiredCapabilities.safari();
-			driver = new RemoteWebDriver(hubUrl, capability);
+			//driver = new RemoteWebDriver(hubUrl, capability);
 		}
 
 		log.info("WebDriverFactory created an instance of WebDriver for: " + browserName);
+		
 		return driver;
+	}
+
+	private static DesiredCapabilities DesiredCapabilities() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	private static DesiredCapabilities getIncognitoDesiredCapabilities() {

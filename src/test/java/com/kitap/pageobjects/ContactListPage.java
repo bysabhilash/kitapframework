@@ -1,12 +1,13 @@
 package com.kitap.pageobjects;
 
-import org.openqa.selenium.Keys; 
+import org.openqa.selenium.Keys;  
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import kitap.SFPageBase;
+import kitap.SFPageClassic;
 
 
 /*
@@ -15,12 +16,49 @@ import kitap.SFPageBase;
 * @Description: This page object covers methods for all the fields in salesforce of contactcreation
 */
 
-
 public class ContactListPage extends SFPageBase{
+	
+	
+	@FindBy(xpath = "//div[@class='slds-icon-waffle']")
+	private WebElement ninesymbol;
+
+
+	@FindBy(xpath = "//*[@id=\"Contact\"]/div/lightning-formatted-rich-text/span/p/b")
+	private WebElement contacts;
+
+	
+	
 	 public ContactListPage(WebDriver webDriver) {
 		    super(webDriver);
 		    PageFactory.initElements(driver, this);
 	  }
+	 
+	 
+	 public void clickninesymbol() {
+	        try {
+
+	            SFClick(ninesymbol);
+	        } catch (Exception e) {
+	            System.out.println("in catch");
+	        }
+	    }
+	 
+	 
+	 public void entercontacts(String label, String data) throws Exception {
+
+	        try {
+	            setText(label, data);
+	        } catch (Exception e) {
+	            System.out.println("In catch" + label);
+	        }
+	    }
+
+	 
+	 public void clickcontacts() throws InterruptedException {
+
+	        SFClick(contacts);
+
+	        }
 
 	    	    
 	    /*

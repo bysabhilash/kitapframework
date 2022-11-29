@@ -5,7 +5,9 @@
 	<test name="smoke_test" preserve-order="true">
 		<classes>
       <class name="com.kitap.testscripts.AccountCreationViaUI"/>
-      <class name="com.kitap.testscripts.ContactsCreationViaUI"/>
+       <class name="com.kitap.testscripts.HospitalManagementCreationViaUI"/>
+     <class name="com.kitap.testscripts.BankingManagementCreationViaUI"/>
+    <!-- <class name="com.kitap.testscripts.ContactsCreationViaUI"/>
       <class name="com.kitap.testscripts.LeadCreationViaUI"/>
       <class name="com.kitap.testscripts.OpportunityCreationViaUI"/>
       <class name="com.kitap.testscripts.BankingManagementCreationViaUI"/>
@@ -29,7 +31,7 @@
 	  <class name="com.kitap.testscripts.ProductCreationViaUI"/>
 	  <class name="com.kitap.testscripts.WorkOrderCreationViaUI"/>	  
 	  <class name="com.kitap.testscripts.ServiceAppointmentCreationViaUI"/>	  
-	  <class name="com.kitap.testscripts.ShiftCreationViaUI"/>		  	  
+	  <class name="com.kitap.testscripts.ShiftCreationViaUI"/>		   --> 	  
     </classes>
 	</test>
 </suite>

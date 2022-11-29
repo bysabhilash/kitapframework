@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
  import org.openqa.selenium.support.PageFactory;
 
 import kitap.SFPageBase;
+import kitap.SFPageClassic;
  
  public class AssetPage extends SFPageBase {
  

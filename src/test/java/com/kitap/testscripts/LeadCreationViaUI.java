@@ -26,7 +26,10 @@ public class LeadCreationViaUI extends BaseTest {
 
         lightningloginpage.openHomepage(SFBaseURL);
         lightningloginpage.login(SFUserId, SFPassword);
-        lightningloginpage.applauncher("Lead");
+      //  lightningloginpage.applauncher("Lead");
+        leadspage.clickninesymbol();
+        leadspage.enterasset("Search apps and items...",data.get("Data_searchbar"));		  
+        leadspage.clickleads();
         leadspage.clickSFbutton("New");
         leadspage.setSalutation("Salutation",data.get("salutation"));
         leadspage.setFirstname("First Name",data.get("firstname"));

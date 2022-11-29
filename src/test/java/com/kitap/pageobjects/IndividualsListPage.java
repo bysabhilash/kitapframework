@@ -42,7 +42,7 @@ import kitap.SFPageBase;
 	        }
 	    }
 	 
-	 public void clickshift() throws InterruptedException {
+	 public void clickindividual() throws InterruptedException {
 
 	        SFClick(individuals);
 

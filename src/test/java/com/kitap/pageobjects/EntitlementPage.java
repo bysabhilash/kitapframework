@@ -1,6 +1,6 @@
 package com.kitap.pageobjects;
 
-import java.util.List;       
+import java.util.List;        
 
 
 import org.openqa.selenium.Alert;
@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import kitap.SFPageBase;
+import kitap.SFPageClassic;
 
 /*
  * @KT1461 
@@ -21,7 +21,7 @@ import kitap.SFPageBase;
  * @Description: This page object covers methods for all the fields in salesforce of entitlement creation
  */
 
-public class EntitlementPage extends SFPageBase{
+public class EntitlementPage extends SFPageClassic{
 	 public EntitlementPage(WebDriver webDriver) {
 		    super(webDriver);
 		    PageFactory.initElements(driver, this);
@@ -121,7 +121,7 @@ public class EntitlementPage extends SFPageBase{
 
 	    	try {
 	    	setinput(label,data);
-	    	   waitForSFPagetoLoad();
+	    	   
 	    }
 	    	 catch (Exception e)
 	        {
@@ -141,7 +141,7 @@ public class EntitlementPage extends SFPageBase{
 
 			try {
 	    	   selectdropdown(label,data);
-	    	   waitForSFPagetoLoad();
+	    	  
 	    }
 			 catch (Exception e)
 	        {
@@ -196,7 +196,7 @@ public class EntitlementPage extends SFPageBase{
 		 public void clickincident(String label) throws Exception {
 
 		    	click(label);
-		    	   waitForSFPagetoLoad();
+		       
 
       }
 		 
@@ -211,7 +211,7 @@ public class EntitlementPage extends SFPageBase{
 
 	    	try {
 	    	   settext1(label,data);
-	    	   waitForSFPagetoLoad();
+	    	  
 	       } 
 	    	  catch (Exception e)  
 	        {
@@ -231,7 +231,7 @@ public class EntitlementPage extends SFPageBase{
 
 	    	try {
 		    	setinput(label,data);
-		    	waitForSFPagetoLoad();
+		    	
 		    }
 		    	 catch (Exception e)
 		        {
@@ -251,7 +251,7 @@ public class EntitlementPage extends SFPageBase{
 		  
 			  try {
 			    	setinput(label,data);
-			    	waitForSFPagetoLoad();
+			    	
 			    }
 			    	 catch (Exception e)
 			        {
@@ -271,7 +271,7 @@ public class EntitlementPage extends SFPageBase{
 
 	    	try {
 		    	   settext1(label,data);
-		    	   waitForSFPagetoLoad();
+		    	  
 		       } 
 		    	  catch (Exception e)  
 		        {
@@ -291,7 +291,7 @@ public class EntitlementPage extends SFPageBase{
 
 	    	try {
 	    	click(label);
-	    	   waitForSFPagetoLoad();
+	    	  
 	    	}
 	    	   catch (Exception e)  
 		        {

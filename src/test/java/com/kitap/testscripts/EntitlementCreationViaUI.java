@@ -1,8 +1,8 @@
 package com.kitap.testscripts;
 
-import java.util.Hashtable ; 
+import java.util.Hashtable ;
 
-
+import org.openqa.selenium.By;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
@@ -29,13 +29,25 @@ public class EntitlementCreationViaUI extends BaseTest {
         
         lightningloginpage.login(SFUserId, SFPassword);
         
-        entitlementpage.clickninesymbol();
+    //    entitlementpage.clickninesymbol();
         
-        entitlementpage.enterentitlement("Search apps and items...",data.get("Data_searchbar"));
+    //    entitlementpage.enterentitlement("Search apps and items...",data.get("Data_searchbar"));
         
-        entitlementpage.Entitlement();
+    //    entitlementpage.Entitlement();
         
-        entitlementpage.clicknewbutton("New");
+    //    entitlementpage.clicknewbutton("New");
+        
+        driver.findElement(By.xpath("(//span[@class='uiImage'])[1]")).click();
+        Thread.sleep(3000);
+
+       driver.findElement(By.xpath("//a[normalize-space()='Switch to Salesforce Classic']")).click();
+        Thread.sleep(6000);
+
+       driver.findElement(By.xpath("//a[text()='Entitlements']")).click();
+        Thread.sleep(6000);
+
+       driver.findElement(By.xpath("//input[@title='New']")).click();
+        Thread.sleep(2000);
         
         entitlementpage.setEntitlename("Entitlement Name", data.get("entitlementnames"));
         

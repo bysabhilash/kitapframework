@@ -1,11 +1,18 @@
 package com.kitap.pageobjects;
-import org.openqa.selenium.By;
+import org.openqa.selenium.By; 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Listeners;
+
+import com.kitap.utilities.ExtentManager;
+
 import kitap.SFPageBase;
+import kitap.SFPageClassic;
+
+@Listeners(com.kitap.utilities.listener.class)
 
 /*
  * @KTV1362
@@ -14,15 +21,17 @@ import kitap.SFPageBase;
  */
 public class HospitalManagementListPage extends SFPageBase {
 
-    public HospitalManagementListPage(WebDriver webDriver) {
-        super(webDriver);
-        PageFactory.initElements(driver, this);
-    }
+  
     @FindBy(xpath = "//div[@class='slds-icon-waffle']")
     private WebElement ninesymbol;
 
     @FindBy(xpath="//b[normalize-space()=\"Hospital Management\"]")
     private WebElement clickHospitalManagement;
+    
+    public HospitalManagementListPage(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(driver, this);
+    }
 
     /*
      * @KTV1362
@@ -35,6 +44,7 @@ public class HospitalManagementListPage extends SFPageBase {
     {
         SFClick(ninesymbol);
         waitForSFPagetoLoad();
+      
     }
 
     /*
@@ -48,6 +58,7 @@ public class HospitalManagementListPage extends SFPageBase {
 
         try {
             setText(label, data);
+           
         }
         catch (Exception e)
         {

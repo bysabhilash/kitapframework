@@ -184,7 +184,7 @@ public class ContactRequestListPage extends SFPageBase {
 
         try{
             selectdropdown(label,data);
-            waitForSFPagetoLoad();
+          
         }
         catch (Exception e)
         {
@@ -204,7 +204,7 @@ public class ContactRequestListPage extends SFPageBase {
 
         try{
             selectdropdown(label,data);
-            waitForSFPagetoLoad();
+            
         }
         catch (Exception e)
         {
@@ -223,6 +223,7 @@ public class ContactRequestListPage extends SFPageBase {
     public void setDescription(String label,String data) throws Exception{
         try{
             settext1(label, data);
+            waitForSFPagetoLoad();
           
         }
         catch (Exception e)
@@ -242,7 +243,6 @@ public class ContactRequestListPage extends SFPageBase {
     public void savebutton (String label) throws Exception{
         try {
             click(label);
-            waitForSFPagetoLoad();
         }
         catch (Exception e)
         {

@@ -1,13 +1,14 @@
 
   package com.kitap.pageobjects;
   
-  import org.openqa.selenium.Keys;     
+  import org.openqa.selenium.Keys;      
   import org.openqa.selenium.WebDriver;  
   import org.openqa.selenium.WebElement; 
   import org.openqa.selenium.support.FindBy; 
   import org.openqa.selenium.support.PageFactory;
 
 import kitap.SFPageBase;
+import kitap.SFPageClassic;
 
 
 /*
@@ -19,6 +20,14 @@ import kitap.SFPageBase;
 
   
   public class Opportunitypagelist extends SFPageBase {
+	  
+	  
+	  @FindBy(xpath = "//div[@class='slds-icon-waffle']")
+	    private WebElement ninesymbol;
+
+
+	  @FindBy(xpath = "//*[@id=\"Opportunity\"]/div/lightning-formatted-rich-text/span/p/b")
+	    private WebElement opportunities;
   
 	  public Opportunitypagelist(WebDriver webDriver) {
 		    super(webDriver);
@@ -26,7 +35,34 @@ import kitap.SFPageBase;
 	  }
 		    // Creates instance for all web elements
 
+      
+	  public void clickninesymbol() {
+	        try {
 
+	            SFClick(ninesymbol);
+	        } catch (Exception e) {
+	            System.out.println("in catch");
+	        }
+	    }
+	 
+	 
+	 public void enteropportunities(String label, String data) throws Exception {
+
+	        try {
+	            setText(label, data);
+	        } catch (Exception e) {
+	            System.out.println("In catch" + label);
+	        }
+	    }
+
+	 
+	 public void clickopportunities() throws InterruptedException {
+
+	        SFClick(opportunities);
+	       waitForSFPagetoLoad();
+
+	        }
+	 
 
 	  /*
 	   * @KT1444
@@ -38,6 +74,7 @@ import kitap.SFPageBase;
 	    public void clicknewbutton(String label) throws Exception {
 
 	    	clickSFbutton(label);
+	    	waitForSFPagetoLoad();
 
 	    }
 	  /*
@@ -50,7 +87,7 @@ import kitap.SFPageBase;
 	    public void clickprivate(String label) throws Exception {
 
 	    	click(label);
-	    	   waitForSFPagetoLoad();
+	    	   
 
 	    }
 
@@ -89,7 +126,7 @@ import kitap.SFPageBase;
 	    public void selectcustomertype(String label,String data) throws Exception {
 
 	    	   selectdropdown1(label,data);
-	    	   waitForSFPagetoLoad();
+	    	  
 
 	    }
 	  /*
@@ -102,7 +139,7 @@ import kitap.SFPageBase;
 	    public void selectlead(String label,String data) throws Exception {
 
 	    	   selectOption(label,data);
-	    	   waitForSFPagetoLoad();
+	    	  
 
 
 	    }
@@ -116,7 +153,7 @@ import kitap.SFPageBase;
 	    public void selectstage(String label,String data) throws Exception {
 
 	    	   selectOption(label,data);
-	    	   waitForSFPagetoLoad();
+	    	   
 
 
 	    }
@@ -130,7 +167,7 @@ import kitap.SFPageBase;
 	    public void setamount(String label,String data) throws Exception {
 
 	    	   setText(label,data);
-	    	   waitForSFPagetoLoad();
+	    	  
 
 
 	    }
@@ -144,7 +181,7 @@ import kitap.SFPageBase;
 	    public void setdate(String label,String data) throws Exception {
 
 	    	   setText(label,data);
-	    	   waitForSFPagetoLoad();
+	    	   
 
 
 	    }
@@ -158,7 +195,7 @@ import kitap.SFPageBase;
 	    public void setnextstep(String label,String data) throws Exception {
 
 	    	   setText(label,data);
-	    	   waitForSFPagetoLoad();
+	    	   
 
 
 	    }
@@ -166,7 +203,7 @@ import kitap.SFPageBase;
 	    public void setprobability(String label,String data) throws Exception {
 
 	    	   setText(label,data);
-	    	   waitForSFPagetoLoad();
+	    	  
 
 
 	    }
@@ -251,6 +288,7 @@ import kitap.SFPageBase;
 
 	    	   setText(label,data);
 	    	   waitForSFPagetoLoad();
+	    	  
 
 	    }
 	  /*
@@ -261,9 +299,9 @@ import kitap.SFPageBase;
 	   * @return values: saving record
 	   */
 	    public void clicksavebutton(String label) throws Exception {
-
+            
 	    	clickSFbutton(label);
-	    	   waitForSFPagetoLoad();
+	    	  
 
 	    }
   }

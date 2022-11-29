@@ -108,7 +108,7 @@ public class FinanceTransactionListPage extends SFPageBase
     public void setreferenceEntity(String label, String label1,String data)
     {
         try{
-            selectimgclick(label,label1,data);
+           // selectimgclick(label,label1,data);
             waitForSFPagetoLoad();
         }
         catch (Exception e)
@@ -133,7 +133,7 @@ public class FinanceTransactionListPage extends SFPageBase
     public void setparentreferenceEntity(String label,String label1,String data)
     {
         try{
-        	 selectimgclick(label,label1,data);
+        	// selectimgclick(label,label1,data);
            
         }
         catch (Exception e)
@@ -306,7 +306,7 @@ public class FinanceTransactionListPage extends SFPageBase
     public void setsourceEntity(String label, String label1,String data)
     {
         try{
-            selectimgclick(label,label1,data);
+         //   selectimgclick(label,label1,data);
             waitForSFPagetoLoad();
         }
         catch (Exception e)
@@ -318,7 +318,7 @@ public class FinanceTransactionListPage extends SFPageBase
     public void setdestinationEntity(String label, String label1,String data)
     {
         try{
-            selectimgclick(label,label1,data);
+         //   selectimgclick(label,label1,data);
             waitForSFPagetoLoad();
         }
         catch (Exception e)

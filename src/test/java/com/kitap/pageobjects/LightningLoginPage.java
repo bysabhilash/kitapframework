@@ -10,6 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import com.kitap.utilities.ExtentManager;
+
 import org.apache.commons.codec.BinaryEncoder;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.BinaryDecoder;
@@ -43,17 +46,20 @@ public class LightningLoginPage extends kitap.SFPageBase {
 	 */
 	public void login(String userid, String passwordtext) throws InterruptedException {
 
-		Thread.sleep(8000); 
      // waitForSFPagetoLoad();
         
-		 String str="Jasper@143";
+		// String str="Abhilash@143";
 		uname.sendKeys(userid);
+		ExtentManager.pass(userid   +  "  able to send in  the username field");
 		
-		byte[] decodedString = Base64.decodeBase64(passwordtext);
+		
+		//byte[] decodedString = Base64.decodeBase64(passwordtext);
 	     // System.out.println("Decoded value is " + new String(decodedString));
-	          String value = new String(decodedString);
-     	password.sendKeys(value);
+	         // String value = new String(decodedString);
+     	password.sendKeys(passwordtext);
+     	ExtentManager.pass( "password  able to send in  the password field");
      	safeClick(login_button);
+     	ExtentManager.pass("after submitting the valid login credentionals user navigated in to Home page ");
 
 		
 		  waitForSFPagetoLoad(); try {

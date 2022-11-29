@@ -1,8 +1,8 @@
 package com.kitap.testscripts;
 
-import java.util.Hashtable; 
-   
+import java.util.Hashtable;
 
+import org.openqa.selenium.By;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
@@ -36,7 +36,23 @@ public class RefundCreationViaUI extends BaseTest {
         refundpage.clickrefund();
        
         refundpage.clicknewbutton("New");
- 
+        
+		/*
+		 * driver.findElement(By.xpath("(//span[@class='uiImage'])[1]")).click();
+		 * Thread.sleep(3000);
+		 * 
+		 * 
+		 * 
+		 * driver.findElement(By.
+		 * xpath("//a[normalize-space()='Switch to Salesforce Classic']")).click();
+		 * Thread.sleep(6000);
+		 * 
+		 * driver.findElement(By.xpath("//a[text()='Refunds']")).click();
+		 * Thread.sleep(6000);
+		 * 
+		 * driver.findElement(By.xpath("//input[@title='New']")).click();
+		 * Thread.sleep(2000);
+		 */
         refundpage.selectaccountname("Account",data.get("accountname"));
         
         refundpage.selecttype("Type",data.get("type"));

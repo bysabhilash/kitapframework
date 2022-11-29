@@ -23,11 +23,18 @@ public class AccountCreationViaUI extends BaseTest {
 
 			throw new SkipException("Skipping the test " + "AccountCreationViaUI".toUpperCase() + "as the Run mode is NO");
 		}
+		
 	    lightningloginpage.openHomepage(SFBaseURL);
 	
 		lightningloginpage.login(SFUserId, SFPassword);
 		
-		lightningloginpage.applauncher("Account");
+		//lightningloginpage.applauncher("Account");
+		
+		accountlistpage.clickninesymbol();
+		
+		accountlistpage.enteraccounts("Search apps and items...", data.get("Data_searchbar"));
+		
+		accountlistpage.clickaccounts();
 		
 		accountlistpage.clicknew("New");
 		
