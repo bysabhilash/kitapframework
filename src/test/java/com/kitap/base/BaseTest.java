@@ -1,6 +1,6 @@
 package com.kitap.base;
 
-import java.io.File;            
+import java.io.File;             
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,6 +14,10 @@ import java.util.concurrent.TimeUnit;
 import javax.mail.MessagingException;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.EmailAttachment;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.MultiPartEmail;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.dom4j.util.UserDataAttribute;
@@ -93,7 +97,8 @@ import com.kitap.utilities.ExcelReader;
 
 import kitap.GetSFApps;
 import kitap.HTTPClientWrapper;
-import kitap.PageBase;
+import kitap.SFPageBase;
+
 
 /*@author: KT1456 
 @Date: 22/06/2022
@@ -207,7 +212,7 @@ public class BaseTest implements PropertyReader {
 			action = new Actions(driver);
 			pageFactory = new PageFactory(driver);
 
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
 
 			System.out.println("Window width: " + driver.manage().window().getSize().getWidth());
@@ -375,7 +380,9 @@ public class BaseTest implements PropertyReader {
 		caseswarrantyclaimpage = (CasesWarrantyClaim)pageFactory.getPageObject(CasesWarrantyClaim.class.getName());
 		caseswarrantypage = (CasesWarranty)pageFactory.getPageObject(CasesWarranty.class.getName());
 		casesserviceapproval=(CaseServiceApproval)pageFactory.getPageObject(CaseServiceApproval.class.getName());
-	}                                                           
+	} 
+	
+	
 	
 	/*@author: KT1456 
 	@Date: 22/06/2022
@@ -403,7 +410,7 @@ public class BaseTest implements PropertyReader {
 	  }
 	  
 	  public File captureScreenShot() { return new
-	  PageBase(driver).takeScreenshot(); }
+	  SFPageBase(driver).takeScreenshot(); }
 	 
 	/*
 	 * public void aftermymethod(ITestResult result) {
@@ -444,6 +451,8 @@ public class BaseTest implements PropertyReader {
 		driver.manage().deleteAllCookies();
 
 	}
+	
+	
 
 	@AfterSuite(alwaysRun = true)
 	public void quitWebDrivers() {
@@ -460,6 +469,37 @@ public class BaseTest implements PropertyReader {
 			e.printStackTrace();
 		}
 	}
+		
+		public static void SendEmail() throws EmailException {
+			   // Create the attachment
+			   EmailAttachment attachment = new EmailAttachment();
+
+			              attachment.setPath(System.getProperty("C:/Users/AbhilashBysani-Kairo/eclipse-workspace/KITAP/report/Live%20Project%201_2022-12-06_16-23-14.html"));
+			   
+
+			              attachment.setDisposition(EmailAttachment.ATTACHMENT);
+			                  attachment.setDescription(" Test Execution Report");
+			                  attachment.setName("Automation Test Execution Report");
+			         
+			                  // Create the email message
+			                  MultiPartEmail email = new MultiPartEmail();
+			                  email.setHostName("smtp.gmail.com");
+			                  email.setSSLOnConnect(true);
+			                  email.setSmtpPort(465);
+			                  email.setAuthenticator(new DefaultAuthenticator("abhilashbysani@gmail.com", "abhilashbysani@gmail.com"));
+			                  email.addTo("abhilashbysani96@gmail.com", "Test");
+			                  email.setFrom("abhilashbysani@gmail.com", "Me");
+			                  email.setSubject("Automation Test Execution Report");
+			                  email.setMsg("Automation Test Execution Report");
+			         
+			                  // add the attachment
+			                  email.attach(attachment);
+			         
+			                  // send the email
+			                  email.send();
+			            }
+
+	
 
 	@Override
 	public Properties getStaticData() { 

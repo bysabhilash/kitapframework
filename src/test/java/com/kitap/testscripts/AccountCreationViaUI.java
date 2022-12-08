@@ -36,6 +36,8 @@ public class AccountCreationViaUI extends BaseTest {
 		
 		accountlistpage.clickaccounts();
 		
+		accountlistpage.Accounts("Accounts");
+		
 		accountlistpage.clicknew("New");
 		
 		accountlistpage.setAccountname("Account Name", data.get("accountname"));

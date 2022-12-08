@@ -19,14 +19,15 @@ public class CasesWarrantyClaimCreation extends BaseTest {
             throw new SkipException("Skipping the test " + "CasesWarrantyClaimCreation".toUpperCase() + "as the Run mode is NO");
         }
         ExtentManager.log("Starting CasesWarrantyClaimCreation ...");
-        lightningloginpage.openHomepage("https://test.salesforce.com/");
-        lightningloginpage.login(data.get("username"), data.get("password"));
+        lightningloginpage.openHomepage(SFBaseURL);
+        lightningloginpage.login(SFUserId, SFPassword);
+        //caseswarrantyclaimpage.loginvalidation("Cases");
         caseswarrantyclaimpage.clicknew("New");
         caseswarrantyclaimpage.scrolling();
         caseswarrantyclaimpage.clickwarrantyclaim();
         caseswarrantyclaimpage.clicknext("Next");
-        caseswarrantyclaimpage.setquality("Quality Notes", data.get("qualitynotes"));
-        caseswarrantyclaimpage.setasteasv("Astea SV", data.get("Astea Sv"));
+        caseswarrantyclaimpage.warrantypagevalidation("New Case: Warranty Claim Authorization","New Case: Warranty Claim Authorization");
+        //caseswarrantyclaimpage.setasteasv("Astea SV", data.get("Astea Sv"));
         caseswarrantyclaimpage.setsubject("Subject", data.get("Subject"));
         caseswarrantyclaimpage.selectcontact("Contact Name", data.get("Contact Name"));
         caseswarrantyclaimpage.selectaccountname("Account Name", data.get("Account Name"));
@@ -46,14 +47,13 @@ public class CasesWarrantyClaimCreation extends BaseTest {
         caseswarrantyclaimpage.selectpriority("Priority", data.get("Priority"));
         caseswarrantyclaimpage.selectcasecategory("Case Category", data.get("casecategory"));
         caseswarrantyclaimpage.selectstatus("Status", data.get("Status"));
-       // caseswarrantyclaimpage.clickadditinalsupport("Additional Support Required");
         caseswarrantyclaimpage.clickworkcompleted("Work Already Completed");
         caseswarrantyclaimpage.clicksenttoquality("Sent to Quality");
         caseswarrantyclaimpage.clickimagesincluded("Images Included");
         caseswarrantyclaimpage.clicktemplateforqacase("Template for QA Case Plans");
-        caseswarrantyclaimpage.selectbusinessunit("Business Unit", data.get("Business Unit"));
+        caseswarrantyclaimpage.selectbusinessunit("Business Unit", data.get("Business Unit"));          
         caseswarrantyclaimpage.setreferncenumber("Reference Number", data.get("Reference Number"));
-        caseswarrantyclaimpage.selectvendorname("Vendor Name", data.get("vendorname"));
+       // caseswarrantyclaimpage.selectvendorname("Vendor Name", data.get("vendorname"));                 
         caseswarrantyclaimpage.selectvendorcontact("Contact (at Vendor)", data.get("Contact (at Vendor)"));
         caseswarrantyclaimpage.selectrecoverstatus("Recovery Status", data.get("Recovery Status"));
         caseswarrantyclaimpage.setacctnumber("Acct# to Credit", data.get("Acct# to Credit"));
@@ -72,7 +72,7 @@ public class CasesWarrantyClaimCreation extends BaseTest {
         caseswarrantyclaimpage.subcontractamountrequest("Labor Amount Approved", data.get("Labor Amount Approved"));
         caseswarrantyclaimpage.subcontractamountapproved("Daikin Parts Amount Approved", data.get("Daikin Parts Amount Approved"));
         caseswarrantyclaimpage.materialsamountrequest("Subcontractor Amount Approved", data.get("SubContractor Amount Approved"));
-        caseswarrantyclaimpage.materialsamountapproved("Additional Materials Amount Approved", data.get("Additional Materials Amount Approved"));
+        caseswarrantyclaimpage.materialsamountapproved("Additional Materials Amount Approved", data.get("Additional Materials Amount Approved"));              
         caseswarrantyclaimpage.selectwarrantyapprover("Warranty Approver", data.get("Warranty Approver"));
         caseswarrantyclaimpage.selectsecondwarrantyapprover("Warranty Approver II", data.get("Warranty Approver II"));
         caseswarrantyclaimpage.selectrgmapprover("RGM Approver", data.get("RGM Approver"));
@@ -80,8 +80,7 @@ public class CasesWarrantyClaimCreation extends BaseTest {
         caseswarrantyclaimpage.setwarrantyapproved("Warranty Approved Ttl",data.get("Warranty Approved Ttl"));
         caseswarrantyclaimpage.setwarrantyrequested("Warranty Requested Ttl",data.get("Warranty Requested Ttl"));
         caseswarrantyclaimpage.setconcessionapproved("Concessions Approved Ttl",data.get("Concessions Approved Ttl"));
-        caseswarrantyclaimpage.setconcessionrequested("Concessions Requested Ttl",data.get("Concessions Requested Ttl"));
-      //  caseswarrantyclaimpage.selectapprovalstatus("Approval Status", data.get("approvalstatus")); 
+        caseswarrantyclaimpage.setconcessionrequested("Concessions Requested Ttl",data.get("Concessions Requested Ttl"));     
         caseswarrantyclaimpage.setauthorizeddate("Authorized Date","11/20/2022");     
         caseswarrantyclaimpage.setrgmapproveddate("RGM Approved Date", data.get("RGM Approver Date"));
         caseswarrantyclaimpage.setrgmrejecteddate("RGM Rejected Date", data.get("RGM Rejected Date"));
@@ -103,16 +102,15 @@ public class CasesWarrantyClaimCreation extends BaseTest {
         caseswarrantyclaimpage.clickapprovalcommentsnotreceived("Approval Comments not received - WA");
         caseswarrantyclaimpage.setdescription("Web Description", data.get("Web Description"));
         caseswarrantyclaimpage.clickbankclass("HasBlankClasses");
-        caseswarrantyclaimpage.clickclosedtime("Case Closed On Time");
         caseswarrantyclaimpage.setserialnumber("Serial Number", data.get("Serial Number"));
         caseswarrantyclaimpage.setemail("Web Email", data.get("Web Email"));
         caseswarrantyclaimpage.setactivitydate("First Activity Date",data.get("First Activity Date"));
         caseswarrantyclaimpage.setdatecurrentstatus("Date Set to Current Status", data.get("Date Set to Current Status"));
-        caseswarrantyclaimpage.setdatereceived("Date Received", data.get("Date Received"));
-        Thread.sleep(5000);
+        caseswarrantyclaimpage.setdatereceived("Date Received", data.get("Date Received"));                 
         caseswarrantyclaimpage.clicksave("Save");
         caseswarrantyclaimpage.submitstatus();
-        Thread.sleep(5000);
+        caseswarrantyclaimpage.savevalidation("Warranty Review","Pending");
+        SendEmail();
 
 
     }

@@ -24,6 +24,9 @@ public class AccountListPage extends SFPageBase {
 
 	    @FindBy(xpath = "//*[@id=\"Account\"]/div/lightning-formatted-rich-text/span/p/b")
 	    private WebElement accounts;
+	    
+	    @FindBy(xpath = "//button[@name='SaveEdit']")
+	    private WebElement save;
 
 
 	    
@@ -33,12 +36,13 @@ public class AccountListPage extends SFPageBase {
 		    PageFactory.initElements(driver, this);
 	 }
 	 
-	 public void clickninesymbol() {
+	 public void clickninesymbol() throws InterruptedException {
 	        try {
 
 	            SFClick(ninesymbol);
 	        } catch (Exception e) {
 	            System.out.println("in catch");
+	            
 	        }
 	    }
 	 
@@ -49,6 +53,7 @@ public class AccountListPage extends SFPageBase {
 	            setText(label, data);
 	        } catch (Exception e) {
 	            System.out.println("In catch" + label);
+	            
 	        }
 	    }
 
@@ -58,7 +63,16 @@ public class AccountListPage extends SFPageBase {
 	        SFClick(accounts);
 	        waitForSFPagetoLoad();
 
-	        }
+	   }
+	 
+	 public void Accounts(String label) throws Exception {
+
+	        clickbutton(label);
+	        waitForSFPagetoLoad();
+
+	   }
+	 
+	 
 	 
 	 
 
@@ -71,8 +85,8 @@ public class AccountListPage extends SFPageBase {
     */
 	public void clicknew(String label) throws Exception {
 		try{
-			clickSFbutton(label);
-			waitForSFPagetoLoad();
+			clickbutton(label);
+			
 		}
 		catch (Exception e)
 		{
@@ -738,13 +752,15 @@ public class AccountListPage extends SFPageBase {
 	 */
 	public void clicksave(String label) throws Exception {
 		try{
-			clickSFbutton(label);
+			clickbutton(label);
 			waitForSFPagetoLoad();
+			
+			
 			
 		}
 		catch (Exception c)
 		{
-			System.out.println("In catch"+label);
+			System.out.println("In catch");
 		}
 
 	}

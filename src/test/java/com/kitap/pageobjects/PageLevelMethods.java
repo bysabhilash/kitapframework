@@ -53,7 +53,7 @@ public class PageLevelMethods extends kitap.SFPageBase {
 
 		}
 
-		explicitWait(username, 40);
+		explicitWait(username);
 
 		username.sendKeys(userid);
 		password.sendKeys(passwordtext);

@@ -1,6 +1,6 @@
 package com.kitap.pageobjects;
 
-import java.util.List;
+import java.util.List; 
   
 
 import org.openqa.selenium.Alert;
@@ -46,18 +46,21 @@ public class LightningLoginPage extends kitap.SFPageBase {
 	 */
 	public void login(String userid, String passwordtext) throws InterruptedException {
 
-     // waitForSFPagetoLoad();
+      Thread.sleep(5000);
         
 		// String str="Abhilash@143";
+				
 		uname.sendKeys(userid);
 		ExtentManager.pass(userid   +  "  able to send in  the username field");
 		
 		
-		//byte[] decodedString = Base64.decodeBase64(passwordtext);
-	     // System.out.println("Decoded value is " + new String(decodedString));
-	         // String value = new String(decodedString);
-     	password.sendKeys(passwordtext);
+		byte[] decodedString = Base64.decodeBase64(passwordtext);
+		String value = new String(decodedString);
+	    System.out.println("Decoded value is " + value);	          
+     	password.sendKeys(value);
+    // 	password.sendKeys(passwordtext);
      	ExtentManager.pass( "password  able to send in  the password field");
+     	
      	safeClick(login_button);
      	ExtentManager.pass("after submitting the valid login credentionals user navigated in to Home page ");
 

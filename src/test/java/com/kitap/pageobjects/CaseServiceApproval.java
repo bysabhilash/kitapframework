@@ -70,7 +70,8 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try{
 				clickrelated(value);
-				//ExtentManager.pass("User is able to  select the type--- "  +  data  +  " from dropdown options in the " + label +  " field" );
+				waitForSFPagetoLoad();
+				ExtentManager.pass("User is able to Perform a  click  on  the "  + value   );
 			}
 			catch (Exception e)
 			{
@@ -84,7 +85,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try{
 				clickaction(label);
-				//ExtentManager.pass("User is able to  select the type--- "  +  data  +  " from dropdown options in the " + label +  " field" );
+				ExtentManager.pass("User is able to Perform a  click  on  the "  + label +  " button  ");
 			}
 			catch (Exception e)
 			{
@@ -96,8 +97,8 @@ public class CaseServiceApproval extends SFPageBase {
 		public void clicknew(String label) throws Exception {
 
 			clickSFbutton(label);
-			ExtentManager.pass("User is able to Perform a  click  on  the "  + label +  " button of  cases home page to navigate to the New case creation screen/page ");
-			
+			ExtentManager.pass("User is able to Perform a  click  on  the "  + label +  " button  ");
+			waitForSFPagetoLoad();
 		}
 		
 		public void selectunit(String data) throws Exception {
@@ -118,7 +119,7 @@ public class CaseServiceApproval extends SFPageBase {
 			try {
 				driver.switchTo().frame(frame);
 				setText(label, data);
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 			catch (Exception e)
 			{
@@ -131,7 +132,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try {
 				setText(label, data);
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 			catch (Exception e)
 			{
@@ -144,7 +145,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try {
 				setText(label, data);
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 			catch (Exception e)
 			{
@@ -157,7 +158,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try {
 				setText(label, data);
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 			catch (Exception e)
 			{
@@ -170,7 +171,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try {
 				setText(label, data);
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 			catch (Exception e)
 			{
@@ -183,12 +184,12 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try {
 				setText(label, data);
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 			catch (Exception e)
 			{
 				
-				//ExtentManager.fail("User is not able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.fail("User is not able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 		}
 		
@@ -196,7 +197,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try {
 				setText(label, data);
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 			catch (Exception e)
 			{
@@ -209,7 +210,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try {
 				setText(label, data);
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 			catch (Exception e)
 			{
@@ -222,7 +223,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try {
 				setText(label, data);
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 			catch (Exception e)
 			{
@@ -235,7 +236,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try {
 				setText(label, data);
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 			catch (Exception e)
 			{
@@ -248,7 +249,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 			try {
 				setText(label, data);
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 			}
 			catch (Exception e)
 			{
@@ -263,7 +264,8 @@ public class CaseServiceApproval extends SFPageBase {
 				
 				ele.click();
 				driver.switchTo().defaultContent();
-				//ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
+				waitForSFPagetoLoad();
+				ExtentManager.pass("User is able to Perform a  click  on  the save button  ");
 			}
 			catch (Exception e)
 			{
@@ -276,7 +278,8 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try{
 					performclick(label);
-					//ExtentManager.pass("User is able to  select the type--- "  +  data  +  " from dropdown options in the " + label +  " field" );
+					waitForSFPagetoLoad();
+					ExtentManager.pass("User is able to Perform a  click  on  the " +  label  +  " button  ");
 				}
 				catch (Exception e)
 				{
@@ -289,7 +292,8 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try{
 					performclick(label);
-					//ExtentManager.pass("User is able to  select the type--- "  +  data  +  " from dropdown options in the " + label +  " field" );
+					waitForSFPagetoLoad();
+					ExtentManager.pass("User is able to Perform a  click  on  the " +  label  +  " button  ");
 				}
 				catch (Exception e)
 				{
@@ -311,7 +315,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try{
 					button.click();
-					//ExtentManager.pass("User is able to  select the type--- "  +  data  +  " from dropdown options in the " + label +  " field" );
+					ExtentManager.pass("User is able to Perform a  click  on  the submit for approval  button  ");
 				}
 				catch (Exception e)
 				{
@@ -324,7 +328,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try {
 					settext(label,data);
-					ExtentManager.pass("User able to send a comments-----> "  +  data  + "  to the comment box ");
+					ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 				}
 				catch (Exception e)
 				{
@@ -351,7 +355,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try {
 					scroll(ele2);
-				//	ExtentManager.pass("User able to perform a click function on "  +  label  +  " to send an approval request");
+					ExtentManager.pass("User able to perform a scroll function until approval history is displayed");
 				}
 				catch (Exception e)
 				{
@@ -364,7 +368,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try {
 					clicklink(label);
-					ExtentManager.pass("User able to perform a click function on "  +  label  +  " to send an approval request");
+					ExtentManager.pass("User able to perform a click function on "  +  label    );
 				}
 				catch (Exception e)
 				{
@@ -377,7 +381,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try {
 					clicklink(label);
-					ExtentManager.pass("User able to perform a click function on "  +  label  +  " to send an approval request");
+					ExtentManager.pass("User able to perform a click function on "  +  label  );
 				}
 				catch (Exception e)
 				{
@@ -390,7 +394,8 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try {
 					clickSFbutton(label);
-					ExtentManager.pass("User able to perform a click function on "  +  label  +  " to send an approval request");
+					ExtentManager.pass("User able to perform a click function on "  +  label    );
+					waitForSFPagetoLoad();
 				}
 				catch (Exception e)
 				{
@@ -406,7 +411,8 @@ public class CaseServiceApproval extends SFPageBase {
 					Thread.sleep(2000);
 					login.click();
 					driver.switchTo().defaultContent();
-					//ExtentManager.pass("User able to perform a click function on "  +  label  +  " to send an approval request");
+					
+					ExtentManager.pass("User able to perform a click function on login ");
 				}
 				catch (Exception e)
 				{
@@ -419,7 +425,8 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try {
 					click(label);
-					//ExtentManager.pass("User able to perform a click function on "  +  label  +  " to send an approval request");
+					waitForSFPagetoLoad();
+					ExtentManager.pass("User able to perform a click function on "  +  label  );
 				}
 				catch (Exception e)
 				{
@@ -432,7 +439,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try {
 					clickrelated(label);
-					//ExtentManager.pass("User able to perform a click function on "  +  label  +  " to send an approval request");
+					ExtentManager.pass("User able to perform a click function on "  +  label  );
 				}
 				catch (Exception e)
 				{
@@ -445,6 +452,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try {
 					clickSFbutton(label);
+					ExtentManager.pass("User able to perform a click function on "  +  label  );
 				}
 				catch (Exception e)
 				{
@@ -469,7 +477,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try {
 					clickaction(label);
-					ExtentManager.pass("after mentioning the comments in to the box click the "  +  label  +  " button for accepting the request");
+					ExtentManager.pass("User able to perform a click function on "  +  label  );
 				}
 				catch (Exception e)
 				{
@@ -482,7 +490,7 @@ public class CaseServiceApproval extends SFPageBase {
 
 				try {
 					clickaction(label);
-					ExtentManager.pass("after mentioning the comments in to the box click the "  +  label  +  " button for accepting the request");
+					ExtentManager.pass("User able to perform a click function on "  +  label  );
 				}
 				catch (Exception e)
 				{

@@ -3,6 +3,7 @@ package com.kitap.testscripts;
 import java.util.Hashtable;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
+
 import com.kitap.base.BaseTest;
 import com.kitap.utilities.ExtentManager;
 
@@ -18,7 +19,7 @@ public class CasesWarrantyCreation extends BaseTest {
 
             throw new SkipException("Skipping the test " + "CasesWarrantyCreation".toUpperCase() + "as the Run mode is NO");
         }
-        ExtentManager.log("Starting CasesWarrantyClaimCreation ...");
+        ExtentManager.log("Starting CasesWarrantyCreation ...");
         lightningloginpage.openHomepage(SFBaseURL);
         lightningloginpage.login(data.get("username"), data.get("password"));
         caseswarrantypage.clicknew("New");
@@ -58,12 +59,9 @@ public class CasesWarrantyCreation extends BaseTest {
         caseswarrantypage.setAPnumber("A/P Number", data.get("A/P Number"));
         caseswarrantypage.setAPamount("A/P Amount", data.get("A/P Amount"));
         caseswarrantypage.setAPcreatedate("A/P Paid Date", data.get("Appaiddate"));
-        caseswarrantypage.selectstatus("Status", data.get("Status"));
-        //caseswarrantypage.clickbypass("Bypass");       
-        Thread.sleep(5000);
+        caseswarrantypage.selectstatus("Status", data.get("Status"));         
         caseswarrantypage.clicksave("Save");
         caseswarrantypage.getstatus();
-        Thread.sleep(5000);
         
         
         

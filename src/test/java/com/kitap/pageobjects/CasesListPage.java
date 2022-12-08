@@ -32,17 +32,13 @@ public class CasesListPage extends SFPageBase {
 	    @FindBy(xpath="//span[@class='toastMessage slds-text-heading--small forceActionsText']")
 	    private WebElement savedtext;
 	    
-	    
-	    
-	   
-	    
-	    
 	  
 	
 	 public CasesListPage(WebDriver webDriver) {
 		    super(webDriver);
 		    PageFactory.initElements(driver, this);
 	  }
+	 
 	 
 	 public void loginvalidation(String label ,String value) {
 	        try {
@@ -118,9 +114,6 @@ public class CasesListPage extends SFPageBase {
 		ExtentManager.pass("User is on  the page "  + value);
 		
 	}
-	
-	
-	
 	
 	 public void setAccountname(String label,String data) throws Exception {
 		 

@@ -1,9 +1,11 @@
 package com.kitap.testscripts;
 import java.util.Hashtable;
+
+import com.kitap.base.BaseTest;
 import com.kitap.utilities.TestUtil;
+
 import org.testng.SkipException;
 import org.testng.annotations.Test;
-import com.kitap.base.BaseTest;
 
 /*
  * @KTV1362

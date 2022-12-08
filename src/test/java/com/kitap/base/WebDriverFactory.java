@@ -1,6 +1,6 @@
 package com.kitap.base;
 
-import java.io.File;   
+import java.io.File;    
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -11,11 +11,14 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.internal.ProfilesIni;
+import org.openqa.selenium.firefox.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerDriverService;
 import org.openqa.selenium.remote.CapabilityType;
@@ -64,12 +67,9 @@ public class WebDriverFactory {
 		if (browserName.equalsIgnoreCase("firefox")) {
 			driver = new FirefoxDriver(createFirefoxProfile());
 		} else if (browserName.equalsIgnoreCase("chrome")) {
-			String chromeExe = "src" + File.separator + "test" + File.separator + "resources" + File.separator
-					+ "chromedriver.exe";
-			System.setProperty("webdriver.chrome.driver", chromeExe);
-			System.setProperty("webdriver.chrome.silentOutput", "true");
 			
-			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.setCapability("demo_capability", true);
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-notifications");
 			options.setExperimentalOption("useAutomationExtension", false);
@@ -79,26 +79,31 @@ public class WebDriverFactory {
 			options.addArguments("--disable-infobars"); 
 			options.addArguments("--disable-dev-shm-usage"); 
 			options.addArguments("--disable-browser-side-navigation"); 
-			options.addArguments("--disable-gpu"); 
+			options.addArguments("--disable-gpu");
 			options.setPageLoadStrategy(PageLoadStrategy.NONE);
-
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-
-			
-			driver = WebDriverManager.chromedriver().capabilities(options).create();
+			options.merge(capabilities);      			
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver(options);
+		
 		} else if (browserName.equalsIgnoreCase("edge")) {
-			String ieExe = "src" + File.separator + "test" + File.separator + "resources" + File.separator
-										+ "msedgedriver.exe";
-			System.setProperty("webdriver.edge.driver", ieExe);
-			DesiredCapabilities capabilities = DesiredCapabilities.edge();
-			capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-			capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-			
-			capabilities.setCapability(InternetExplorerDriver.INITIAL_BROWSER_URL, "http://www.bing.com/");
-			capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
-			InternetExplorerDriverService ieservice = new InternetExplorerDriverService.Builder()
-					.usingDriverExecutable(new File(ieExe)).usingAnyFreePort().build();
-			driver = new InternetExplorerDriver(ieservice, capabilities);
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.setCapability("demo_capability", true);
+			EdgeOptions options = new EdgeOptions();
+			options.addArguments("--disable-notifications");
+			options.setExperimentalOption("useAutomationExtension", false);
+			options.addArguments("start-maximized"); 
+			options.addArguments("enable-automation"); 
+			options.addArguments("--no-sandbox"); 
+			options.addArguments("--disable-infobars"); 
+			options.addArguments("--disable-dev-shm-usage"); 
+			options.addArguments("--disable-browser-side-navigation"); 
+			options.addArguments("--disable-gpu");
+			options.setPageLoadStrategy(PageLoadStrategy.NONE);
+			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+			options.merge(capabilities);      			
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver(options);
 		} else if (browserName.equalsIgnoreCase("safari") && isSafariSupportedPlatform()) {
 			driver = new SafariDriver();
 		} else if (browserName.equalsIgnoreCase("remote-firefox")) {
@@ -120,7 +125,7 @@ public class WebDriverFactory {
 		 
 			
 		} else if (browserName.equalsIgnoreCase("remote-safari")) {
-			DesiredCapabilities capability = DesiredCapabilities.safari();
+		//	DesiredCapabilities capability = DesiredCapabilities.safari();
 			//driver = new RemoteWebDriver(hubUrl, capability);
 		}
 
@@ -137,7 +142,7 @@ public class WebDriverFactory {
 	private static DesiredCapabilities getIncognitoDesiredCapabilities() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("-incognito");
-		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 		return capabilities;
 	}
