@@ -30,15 +30,7 @@
       <class name="com.kitap.testscripts.BankingManagementCreationViaUI"/>
       </classes>
        </test>--> 
-   <!--<parameter name="browserType" value="remote-firefox" />
-      <test  name="BankingMangementpage">
-     <classes> 
-     <class name="com.kitap.testscripts.BankingManagementCreationViaUI"/>
-   <class name="com.kitap.testscripts.BankingManagementCreationViaUI"/>
-      <class name="com.kitap.testscripts.OpportunityCreationViaUI"/>
-      <class name="com.kitap.testscripts.AssetCreationViaUI"/>
-      <class name="com.kitap.testscripts.LeadCreationViaUI"/>
-      <class name="com.kitap.testscripts.RefundCreationViaUI"/>   -->   
+   
 </suite> <!-- Suite -->
 
 
