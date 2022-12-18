@@ -24,11 +24,7 @@
        <class name="com.kitap.testscripts.CasesApprovalCreationViaUI"/>
       </classes>
        </test> --> 
- <!-- <test  name="Salesforce Demo page CasesApprovalCreationViaUI">
-      <classes>     
-       
-      </classes>
-       </test> --> 
+ 
       
    
 </suite> <!-- Suite -->
