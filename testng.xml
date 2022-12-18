@@ -24,12 +24,7 @@
        <class name="com.kitap.testscripts.CasesApprovalCreationViaUI"/>
       </classes>
        </test> --> 
-      <!-- <test  name="Salesforce customize pages BankingManagementCreationViaUI">
-        <class name="com.kitap.testscripts.CasesCreationViaUI"/>
-      <classes>
-      <class name="com.kitap.testscripts.BankingManagementCreationViaUI"/>
-      </classes>
-       </test>--> 
+      
    
 </suite> <!-- Suite -->
 
