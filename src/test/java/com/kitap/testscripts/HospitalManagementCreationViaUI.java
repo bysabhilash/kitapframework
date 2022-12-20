@@ -24,18 +24,20 @@ public class HospitalManagementCreationViaUI extends BaseTest {
 
             throw new SkipException("Skipping the test " + "HospitalManagementCreationViaUI".toUpperCase() + "as the Run mode is NO");
         }
-        
+        ExtentManager.createTest("HospitalManagementCreationViaUI","SalesforceDemo").assignAuthor("KT1481").assignCategory("Sanity").assignDevice("Chrome");
         ExtentManager.log("Starting HospitalManagementCreationViaUI ...");
         lightningloginpage.openHomepage(SFBaseURL);
 
-       // lightningloginpage.login(SFUserId, SFPassword);
-        lightningloginpage.login(data.get("username"), data.get("password"));
+        lightningloginpage.login(SFUserId, SFPassword);
+      //  lightningloginpage.login(data.get("username"), data.get("password"));
 
         hospitalmanagementlistpage.clickninesymbol();
 
         hospitalmanagementlistpage.enterHospitalManagement("Search apps and items...", data.get("Data_searchbar"));
 
         hospitalmanagementlistpage.clickHospitalManagement();
+        
+        hospitalmanagementlistpage.Hospitalmanagement("Hospital Management");
 
         hospitalmanagementlistpage.clickNew("New");
         

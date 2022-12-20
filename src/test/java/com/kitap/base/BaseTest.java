@@ -1,6 +1,6 @@
 package com.kitap.base;
 
-import java.io.File;             
+import java.io.File;              
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,6 +12,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.mail.DefaultAuthenticator;
@@ -93,11 +94,12 @@ import com.kitap.pageobjects.WorkPlanTemplatesListPage;
 import com.kitap.pageobjects.WorkStepTemplatesListPage;
 import com.kitap.pageobjects.Worktype;
 import com.kitap.utilities.ExcelReader;
-
+import com.kitap.utilities.Sendmail;
 
 import kitap.GetSFApps;
 import kitap.HTTPClientWrapper;
 import kitap.SFPageBase;
+import net.minidev.json.parser.ParseException;
 
 
 /*@author: KT1456 
@@ -167,11 +169,12 @@ public class BaseTest implements PropertyReader {
 	protected CaseServiceApproval casesserviceapproval;
 	
 	public static String SFBaseURL; 
-
+	public static String Huburl;
 	protected static PageFactory pageFactory = null;
 	protected Properties staticData = getStaticData();
-	protected String huburl = null;
-	//protected String huburl = "http://localhost:4444/wd/hub";
+	//protected String huburl = null;
+	//protected String huburl = Huburl;
+	//protected String huburl = "http://localhost:4444";
 	protected static EmailUtils emailUtils;
 
 	public static String env;
@@ -208,7 +211,7 @@ public class BaseTest implements PropertyReader {
 
 		if ((driver == null)) {
 			logger.info("setupWebDriver()");
-		    driver = WebDriverFactory.createInstance(huburl, browserType);			
+		    driver = WebDriverFactory.createInstance(Huburl, browserType);			
 			action = new Actions(driver);
 			pageFactory = new PageFactory(driver);
 
@@ -247,6 +250,8 @@ public class BaseTest implements PropertyReader {
 				SFBaseURL = (String) JsonPath.read(jsonFile, "$.environments." + env + ".UAT.homePage");
 				SFUserId = (String) JsonPath.read(jsonFile, "$.environments." + env + ".UAT.userId");
 				SFPassword = (String) JsonPath.read(jsonFile, "$.environments." + env + ".UAT.passwd");
+				Huburl=(String) JsonPath.read(jsonFile, "$.environments." + env + ".UAT.huburi");
+				
 
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -423,7 +428,8 @@ public class BaseTest implements PropertyReader {
 	 */
 
 	@AfterClass(alwaysRun = true)
-	public void deleteAllCookies() {
+	
+	public void deleteAllCookies() throws EmailException, InterruptedException {
 		
 		HTTPClientWrapper.SFLogout_API();
 
@@ -449,13 +455,22 @@ public class BaseTest implements PropertyReader {
 
 		logger.info("Clearing all browser cookies...");
 		driver.manage().deleteAllCookies();
-
+		
+			
+		 
 	}
+	
+		
+		
+		
+		
+		
+	
 	
 	
 
 	@AfterSuite(alwaysRun = true)
-	public void quitWebDrivers() {
+	public void quitWebDrivers() throws EmailException, InterruptedException, ParseException {
 		logger.info("terminateWebDrivers()");
 		try {
 			driver.close();
@@ -468,39 +483,12 @@ public class BaseTest implements PropertyReader {
 			logger.error("Error quitting driver");
 			e.printStackTrace();
 		}
-	}
-		
-		public static void SendEmail() throws EmailException {
-			   // Create the attachment
-			   EmailAttachment attachment = new EmailAttachment();
-
-			              attachment.setPath(System.getProperty("C:/Users/AbhilashBysani-Kairo/eclipse-workspace/KITAP/report/Live%20Project%201_2022-12-06_16-23-14.html"));
-			   
-
-			              attachment.setDisposition(EmailAttachment.ATTACHMENT);
-			                  attachment.setDescription(" Test Execution Report");
-			                  attachment.setName("Automation Test Execution Report");
-			         
-			                  // Create the email message
-			                  MultiPartEmail email = new MultiPartEmail();
-			                  email.setHostName("smtp.gmail.com");
-			                  email.setSSLOnConnect(true);
-			                  email.setSmtpPort(465);
-			                  email.setAuthenticator(new DefaultAuthenticator("abhilashbysani@gmail.com", "abhilashbysani@gmail.com"));
-			                  email.addTo("abhilashbysani96@gmail.com", "Test");
-			                  email.setFrom("abhilashbysani@gmail.com", "Me");
-			                  email.setSubject("Automation Test Execution Report");
-			                  email.setMsg("Automation Test Execution Report");
-			         
-			                  // add the attachment
-			                  email.attach(attachment);
-			         
-			                  // send the email
-			                  email.send();
-			            }
-
+		Sendmail.mail();
 	
-
+	}
+	
+	
+		
 	@Override
 	public Properties getStaticData() { 
 		if (staticData == null) {

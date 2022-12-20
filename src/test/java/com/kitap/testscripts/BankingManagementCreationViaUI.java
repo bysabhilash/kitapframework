@@ -25,7 +25,7 @@ public class BankingManagementCreationViaUI extends BaseTest {
 
 			throw new SkipException("Skipping the test " + "BankingManagementCreationViaUI".toUpperCase() + "as the Run mode is NO");
 		}
-		
+		ExtentManager.createTest("BankingManagementCreationViaUI","SalesforceDemo").assignAuthor("KT1451").assignCategory("Regression").assignDevice("Chrome");
 		ExtentManager.log("Starting BankingManagementCreationViaUI ...");
 	    lightningloginpage.openHomepage(SFBaseURL);
 
@@ -53,6 +53,8 @@ public class BankingManagementCreationViaUI extends BaseTest {
 		  bankingmanagement.enterWorktype("Search apps and items...",data.get("Data_searchbar"));
 		  
 		  bankingmanagement.clickbankingmanagement();
+		  
+		  bankingmanagement.Bankingmanagement("Banking Management");
 		 
 		bankingmanagement.clicknew("New");
 

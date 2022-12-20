@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import com.kitap.base.BaseTest;
 import com.kitap.utilities.ExtentManager;
+import com.kitap.utilities.Sendmail;
 
 public class CasesWarrantyClaimCreation extends BaseTest {
 
@@ -18,6 +19,7 @@ public class CasesWarrantyClaimCreation extends BaseTest {
 
             throw new SkipException("Skipping the test " + "CasesWarrantyClaimCreation".toUpperCase() + "as the Run mode is NO");
         }
+        ExtentManager.createTest("CasesWarrantyClaimCreation","SalesforceDaikinDemo").assignAuthor("KT1461").assignCategory("Smoke").assignDevice("Chrome");
         ExtentManager.log("Starting CasesWarrantyClaimCreation ...");
         lightningloginpage.openHomepage(SFBaseURL);
         lightningloginpage.login(SFUserId, SFPassword);
@@ -109,9 +111,9 @@ public class CasesWarrantyClaimCreation extends BaseTest {
         caseswarrantyclaimpage.setdatereceived("Date Received", data.get("Date Received"));                 
         caseswarrantyclaimpage.clicksave("Save");
         caseswarrantyclaimpage.submitstatus();
-        caseswarrantyclaimpage.savevalidation("Warranty Review","Pending");
-        SendEmail();
-
+        caseswarrantyclaimpage.savevalidation("Warranty Review","Warranty Review");
+        Sendmail.mail();
+      
 
     }
 }

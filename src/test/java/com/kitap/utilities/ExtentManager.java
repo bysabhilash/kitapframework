@@ -1,6 +1,6 @@
 package com.kitap.utilities;
 
-import java.io.IOException;   
+import java.io.IOException;    
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -39,7 +39,7 @@ public class ExtentManager extends BaseTest {
 		extentReport.setSystemInfo("Tester", "Abhilash");
 		spark.config().setReportName("MobileSalesforce");
 		spark.config().setDocumentTitle("Test Results");
-		spark.config().setTheme(Theme.STANDARD);
+		spark.config().setTheme(Theme.DARK);
 		
 		return extentReport;
 		

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Salesforce">
+<suite name="Salesforce" parallel="classes" thread-count="2">
 <!-- parallel="tests" thread-count="2" verbose="2"-->
 <listeners>
 <listener class-name="com.kitap.utilities.listener"></listener>
@@ -14,19 +14,19 @@
       </test>--> 
      <test  name="Salesforce Demo CasesWarrantyClaimCreation">
       <classes>     
-      <class name="com.kitap.testscripts.CasesWarrantyClaimCreation"/> 
+      <class name="com.kitap.testscripts.AccountCreationViaUI"/> 
        </classes> 
        </test> 
  <!--  <test  name="Salesforce Demo CasesWarrantyCreation">
        <classes>   
       <class name="com.kitap.testscripts.CasesWarrantyCreation"/> 
       </classes> 
-       </test>     
+       </test>        
     <test  name="Salesforce Demo CaseserviceapprovalCreation">
       <classes>  
        <class name="com.kitap.testscripts.CaseserviceapprovalCreation"/>       
       </classes> 
-       </test>    -->   
+       </test>    -->
     <!-- <test  name="Salesforce Demo page CasesApprovalCreationViaUI">
       <classes>     
        <class name="com.kitap.testscripts.CasesApprovalCreationViaUI"/>

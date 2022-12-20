@@ -6,6 +6,7 @@ import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.kitap.base.BaseTest;
+import com.kitap.utilities.ExtentManager;
 
 
 /*
@@ -23,7 +24,7 @@ public class AccountCreationViaUI extends BaseTest {
 
 			throw new SkipException("Skipping the test " + "AccountCreationViaUI".toUpperCase() + "as the Run mode is NO");
 		}
-		
+		ExtentManager.createTest("AccountCreationViaUI","SalesforceDemo").assignAuthor("KT1461").assignCategory("Smoke").assignDevice("Chrome");
 	    lightningloginpage.openHomepage(SFBaseURL);
 	
 		lightningloginpage.login(SFUserId, SFPassword);

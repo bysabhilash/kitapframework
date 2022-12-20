@@ -69,7 +69,15 @@ public class BankingManagementListPage extends SFPageBase {
 		  
 		  public void clickbankingmanagement() throws InterruptedException {
 		     SFClick(Bankingmanagement);
-		      waitForSFPagetoLoad(); }
+		      waitForSFPagetoLoad(); 
+		      }
+		  
+		  public void Bankingmanagement(String label) throws Exception {
+
+		        clickbutton(label);
+		        waitForSFPagetoLoad();
+
+		   }
 		  
 		 
 	/*
@@ -372,7 +380,7 @@ public class BankingManagementListPage extends SFPageBase {
 	 */
 	public void clicksave(String label) throws Exception {
 		try{
-			clickSFbutton(label);
+			clickbutton(label);
 			
 		}
 		catch (Exception c)

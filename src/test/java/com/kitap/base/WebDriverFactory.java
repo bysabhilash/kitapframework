@@ -1,6 +1,6 @@
 package com.kitap.base;
 
-import java.io.File;    
+import java.io.File;     
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -111,17 +111,17 @@ public class WebDriverFactory {
 			//driver = new RemoteWebDriver(hubUrl, capability);
 			 final DesiredCapabilities caps = new DesiredCapabilities ();
 	           caps.setBrowserName ("firefox");
-	           driver= (new RemoteWebDriver (new URL (hubUrl), caps));
-		} else if (browserName.equalsIgnoreCase("remote-chrome")) {
-			final DesiredCapabilities caps = new DesiredCapabilities ();
-	           caps.setBrowserName ("Chrome");
-	           driver= (new RemoteWebDriver (new URL (hubUrl), caps));
+	           driver= (new RemoteWebDriver (new URL (BaseTest.Huburl), caps));
+		} else if (browserName.equalsIgnoreCase("remote-chrome")) {			
+			  DesiredCapabilities caps = new DesiredCapabilities ();
+	           caps.setBrowserName ("chrome");
+	           driver= (new RemoteWebDriver (new URL (BaseTest.Huburl), caps));            
 		} else if (browserName.equalsIgnoreCase("remote-edge")) {
 			//DesiredCapabilities capability = DesiredCapabilities.edge();
 			//driver = new RemoteWebDriver(hubUrl, capability);
 			 final DesiredCapabilities caps = new DesiredCapabilities ();
 	           caps.setBrowserName ("MicrosoftEdge");
-	           driver= (new RemoteWebDriver (new URL (hubUrl), caps));
+	           driver= (new RemoteWebDriver (new URL (BaseTest.Huburl), caps));
 		 
 			
 		} else if (browserName.equalsIgnoreCase("remote-safari")) {

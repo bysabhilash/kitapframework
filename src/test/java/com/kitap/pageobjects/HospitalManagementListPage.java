@@ -77,6 +77,13 @@ public class HospitalManagementListPage extends SFPageBase {
         SFClick(clickHospitalManagement);
         waitForSFPagetoLoad();
     }
+    
+    public void Hospitalmanagement(String label) throws Exception {
+
+        clickbutton(label);
+        waitForSFPagetoLoad();
+
+   }
 
     /*
      * @KTV1362
@@ -383,7 +390,7 @@ public class HospitalManagementListPage extends SFPageBase {
 
     public void savebutton (String label) throws Exception{
         try {
-            clickSFbutton(label);
+        	clickbutton(label);
             waitForSFPagetoLoad();
         }
         catch (Exception e)
