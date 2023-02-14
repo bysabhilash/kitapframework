@@ -1,5 +1,6 @@
 package com.kitap.testscripts;
 
+import java.util.HashMap;
 import java.util.Hashtable;      
 
 import org.testng.SkipException;
@@ -15,20 +16,20 @@ import com.kitap.utilities.ExtentManager;
  * @Description: This test script covers the creation of an account via UI
  */
 
-public class AccountCreationViaUI extends BaseTest {
+public class AccountCreationViaUIYaml extends BaseTest {
 
-	@Test(dataProviderClass = com.kitap.utilities.TestUtil.class, dataProvider = "dp")
-	public void AccountCreationViaUI(Hashtable<String, String> data) throws Exception {
+	@Test(dataProviderClass = com.kitap.utilities.ReadingYaml.class, dataProvider = "dp")
+	public void AccountCreationViaUIYaml(HashMap<String, String> data) throws Exception {
 
-		if (!(com.kitap.utilities.TestUtil.isTestRunnable("AccountCreationViaUI", excel))) {
+	/*	if (!(com.kitap.utilities.TestUtil.isTestRunnable("AccountCreationViaUI", excel))) {
 
 			throw new SkipException("Skipping the test " + "AccountCreationViaUI".toUpperCase() + "as the Run mode is NO");
-		}
+		}           */
 	
-		ExtentManager.createTest("AccountCreationViaUI","SalesforceDemo").assignAuthor("KT1461").assignCategory("Smoke").assignDevice("Chrome");
+		ExtentManager.createTest("AccountCreationViaUIYaml","SalesforceDemo").assignAuthor("KT1461").assignCategory("Smoke").assignDevice("Chrome");
 	    lightningloginpage.openHomepage(SFBaseURL);
 	
-		lightningloginpage.login(SFUserId, SFPassword);
+	//	lightningloginpage.login(SFUserId, SFPassword);
 		
 		//lightningloginpage.applauncher("Account");
 		

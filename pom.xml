@@ -89,10 +89,10 @@
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-<dependency>
+ <dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
-    <version>3.0.0</version>
+    <version>5.0.8</version>
 </dependency>
 
 
@@ -115,6 +115,13 @@
 			<artifactId>commons-lang</artifactId>
 			<version>${commons-lang.version}</version>
 		</dependency>
+		
+		<dependency>
+    <groupId>com.esotericsoftware.yamlbeans</groupId>
+    <artifactId>yamlbeans</artifactId>
+    <version>1.15</version>
+</dependency>
+
 
 		<dependency>
 			<groupId>jdom</groupId>
@@ -237,12 +244,7 @@
     <version>2.16.0</version>
   </dependency> 
   
-  <dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>extentreports</artifactId>
-    <version>5.0.8</version>
-</dependency>
-
+  
  <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
 <dependency>
     <groupId>org.apache.commons</groupId>
@@ -265,7 +267,7 @@
 	</dependencies>
 	
 	
-	<profiles>
+<!--	<profiles>
 		<profile>
 			<id>all-tests</id>
 			<activation>
@@ -287,39 +289,19 @@
                             <reuseForks>false</reuseForks>
                             <reportsDirectory>target/surefire-reports-${surefire.forkNumber}</reportsDirectory>
                             <suiteXmlFiles>
-                                   <suiteXmlFile>C:\Users\AbhilashBysani-Kairo\eclipse-workspace\KITAP\daikinsuite.xml</suiteXmlFile>
-                            <!--        <suiteXmlFile>C:\Users\AbhilashBysani-Kairo\eclipse-workspace\KITAP\suiteB.xml</suiteXmlFile>
-                                    <suiteXmlFile>C:\Users\AbhilashBysani-Kairo\eclipse-workspace\KITAP\suitec.xml</suiteXmlFile>       -->   
-                               <!--      <suiteXmlFile>C:\Users\AbhilashBysani-Kairo\eclipse-workspace\KITAP\kitapSF.xml</suiteXmlFile>    -->
+                                   <suiteXmlFile>C:\Users\AbhilashBysani-Kairo\eclipse-workspace\KITAP\suiteA.xml</suiteXmlFile>                                 
                             </suiteXmlFiles>
                     </configuration>
-            </plugin>
-		<!--			<plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M7</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                             
-                                <file>C:\Users\AbhilashBysani-Kairo\eclipse-workspace\KITAP\suiteA.xml</file>                              
-                             <file>C:\Users\AbhilashBysani-Kairo\eclipse-workspace\KITAP\suiteB.xml</file>
-                            </suiteXmlFiles>
-                            <properties>
-				            <property>
-				              <name>suitethreadpoolsize</name>
-				              <value>2</value>
-				            </property>
-				          </properties>
-				        </configuration>
-				      </plugin>                   -->
+            </plugin>              
+	
 				</plugins>
 			</build>
 		</profile>
-	</profiles>    
+	</profiles>           -->  
 	
 	
 	
-<!-- 	<profiles>
+	<profiles>
 		<profile>
 			<id>all-tests</id>
 			<activation>
@@ -331,21 +313,21 @@
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-compiler-plugin</artifactId>
 						<version>3.3</version>
-					</plugin>
+					</plugin> 
 					<plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                          <version>2.22.2</version>
                          <configuration>     
                             <suiteXmlFiles>    
-                                <suiteXmlFile>testng.xml</suiteXmlFile>
+                                <suiteXmlFile>daikinsuite.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
 				</plugins>
 			</build>
 		</profile>
-	</profiles>                          -->
+	</profiles>                         
 	
 	<build>
     <plugins>

@@ -1,6 +1,8 @@
 package com.kitap.pageobjects;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List; 
+
   
 
 import org.openqa.selenium.Alert;
@@ -16,8 +18,10 @@ import com.kitap.utilities.ExtentManager;
 import org.apache.commons.codec.BinaryEncoder;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.BinaryDecoder;
+ 
 
 public class LightningLoginPage extends kitap.SFPageBase {
+
 
 	@FindBy(name = "username")
 	private WebElement uname;
@@ -49,16 +53,16 @@ public class LightningLoginPage extends kitap.SFPageBase {
       Thread.sleep(5000);
         
 		// String str="Abhilash@143";
+      
+		
 				
 		uname.sendKeys(userid);
 		ExtentManager.pass(userid   +  "  able to send in  the username field");
-		
-		
 		byte[] decodedString = Base64.decodeBase64(passwordtext);
-		String value = new String(decodedString);
-	    System.out.println("Decoded value is " + value);	          
-     	password.sendKeys(value);
-    // 	password.sendKeys(passwordtext);
+		//String value = new String(decodedString);
+	  //  System.out.println("Decoded value is " + value);	          
+     //	password.sendKeys(value);
+    	password.sendKeys(passwordtext);
      	ExtentManager.pass( "password  able to send in  the password field");
      	
      	safeClick(login_button);

@@ -12,9 +12,9 @@
     <class name="com.kitap.testscripts.AccountCreationViaUI"/>
        </classes>
       </test>--> 
-     <test  name="Salesforce test execution AccountCreationViaUI">
+     <test  name="Salesforce test execution AccountCreationViaUIYaml">
       <classes>     
-      <class name="com.kitap.testscripts.AccountCreationViaUI"/> 
+      <class name="com.kitap.testscripts.AccountCreationViaUIYaml"/> 
        </classes> 
        </test> 
  <!--  <test  name="Salesforce Demo CasesWarrantyCreation">
