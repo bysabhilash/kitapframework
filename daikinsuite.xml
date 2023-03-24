@@ -7,21 +7,21 @@
 </listeners> 
  <parameter name="browserType" value="edge" />  
 
-    <test  name="Salesforce Demo CasesWarrantyClaimCreation">
+   <test  name="Salesforce Demo CasesWarrantyClaimCreation">
       <classes>     
       <class name="com.kitap.testscripts.CasesWarrantyClaimCreation"/> 
        </classes>  
-       </test>   
+       </test>  
        <test  name="Salesforce Demo CasesWarrantyCreation">
        <classes>   
       <class name="com.kitap.testscripts.CasesWarrantyCreation"/> 
       </classes> 
        </test>       
-      <test  name="Salesforce Demo CaseserviceapprovalCreation">
+ <!--      <test  name="Salesforce Demo CaseserviceapprovalCreation">
       <classes>  
        <class name="com.kitap.testscripts.CaseserviceapprovalCreation"/>       
       </classes> 
-       </test>   
+       </test>           -->
 </suite> <!-- Suite -->
 
 

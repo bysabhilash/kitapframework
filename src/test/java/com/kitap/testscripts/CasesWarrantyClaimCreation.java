@@ -26,7 +26,7 @@ public class CasesWarrantyClaimCreation extends BaseTest {
         //caseswarrantyclaimpage.loginvalidation("Cases");
         caseswarrantyclaimpage.clicknew("New");
         caseswarrantyclaimpage.scrolling();
-        caseswarrantyclaimpage.clickwarrantyclaim();
+        caseswarrantyclaimpage.clickwarrantyclaim("Leveraged for Warranty Claim Authorization asset claims (children of WAR Header)");
         caseswarrantyclaimpage.clicknext("Next");
         caseswarrantyclaimpage.warrantypagevalidation("New Case: Warranty Claim Authorization","New Case: Warranty Claim Authorization");
         //caseswarrantyclaimpage.setasteasv("Astea SV", data.get("Astea Sv"));
@@ -35,25 +35,26 @@ public class CasesWarrantyClaimCreation extends BaseTest {
         caseswarrantyclaimpage.selectaccountname("Account Name", data.get("Account Name"));
         caseswarrantyclaimpage.setdate("Date of Failure", data.get("Date Of Failure"));
         caseswarrantyclaimpage.setinquirydate("Original Inquiry Date/Time", data.get("Original Inquiry Date/Time"));
+        caseswarrantyclaimpage.setreopeneddate("Date/Time Re-Opened", data.get("Date/Time Re-Opened"));
+        caseswarrantyclaimpage.selectcaseorigin("Case Origin", data.get("caseorigin"));
+        caseswarrantyclaimpage.selectpriority("Priority", data.get("Priority"));
+        caseswarrantyclaimpage.selectcasecategory("Case Category", data.get("casecategory"));
+        caseswarrantyclaimpage.selectstatus("Status", data.get("Status"));
         caseswarrantyclaimpage.setreason("Reason for Authorization Request", data.get("Reason For Authroisation Request"));
         caseswarrantyclaimpage.setfailureresolution("Failure Resolution & Preventative Action", data.get("Failure Resolution & Preventive Action"));
         caseswarrantyclaimpage.setapprovalreason("Approval Notes", data.get("Approval Notes"));
         caseswarrantyclaimpage.setoriginalamount("Original Request Amount", data.get("Original Request"));
         caseswarrantyclaimpage.setapprovalquery("Approval Comments", data.get("Approval Comment"));
         caseswarrantyclaimpage.setdenialreasons("Reason for Denial", data.get("Reason For Denial"));
-        caseswarrantyclaimpage.setcustomernotes("Customer Notes", data.get("Customer Notes"));
+        caseswarrantyclaimpage.setcustomernotes("Reason for Reduction", data.get("Customer Notes"));
         caseswarrantyclaimpage.setrejectnotes("Reject Comments", data.get("Reject Comments"));
-        caseswarrantyclaimpage.selectflagchecker("Flag Checker", data.get("FlagChecker"));
-        caseswarrantyclaimpage.setreopeneddate("Date/Time Re-Opened", data.get("Date/Time Re-Opened"));
-        caseswarrantyclaimpage.selectcaseorigin("Case Origin", data.get("caseorigin"));
-        caseswarrantyclaimpage.selectpriority("Priority", data.get("Priority"));
-        caseswarrantyclaimpage.selectcasecategory("Case Category", data.get("casecategory"));
-        caseswarrantyclaimpage.selectstatus("Status", data.get("Status"));
-        caseswarrantyclaimpage.clickworkcompleted("Work Already Completed");
+        caseswarrantyclaimpage.selectbusinessunit("Business Unit", data.get("Business Unit"));   
+     //   caseswarrantyclaimpage.selectflagchecker("Flag Checker", data.get("FlagChecker"));       
+    /*    caseswarrantyclaimpage.clickworkcompleted("Work Already Completed");
         caseswarrantyclaimpage.clicksenttoquality("Sent to Quality");
         caseswarrantyclaimpage.clickimagesincluded("Images Included");
-        caseswarrantyclaimpage.clicktemplateforqacase("Template for QA Case Plans");
-        caseswarrantyclaimpage.selectbusinessunit("Business Unit", data.get("Business Unit"));          
+        caseswarrantyclaimpage.clicktemplateforqacase("Template for QA Case Plans");                      */
+              
         caseswarrantyclaimpage.setreferncenumber("Reference Number", data.get("Reference Number"));
        // caseswarrantyclaimpage.selectvendorname("Vendor Name", data.get("vendorname"));                 
         caseswarrantyclaimpage.selectvendorcontact("Contact (at Vendor)", data.get("Contact (at Vendor)"));

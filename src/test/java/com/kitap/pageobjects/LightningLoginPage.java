@@ -58,10 +58,10 @@ public class LightningLoginPage extends kitap.SFPageBase {
 				
 		uname.sendKeys(userid);
 		ExtentManager.pass(userid   +  "  able to send in  the username field");
-		byte[] decodedString = Base64.decodeBase64(passwordtext);
-		//String value = new String(decodedString);
+	//	byte[] decodedString = Base64.decodeBase64(passwordtext);
+	//	String value = new String(decodedString);
 	  //  System.out.println("Decoded value is " + value);	          
-     //	password.sendKeys(value);
+    // 	password.sendKeys(value);
     	password.sendKeys(passwordtext);
      	ExtentManager.pass( "password  able to send in  the password field");
      	

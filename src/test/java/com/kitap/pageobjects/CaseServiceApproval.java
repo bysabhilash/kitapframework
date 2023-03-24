@@ -84,7 +84,7 @@ public class CaseServiceApproval extends SFPageBase {
 	 public void clickcaseservice(String label) throws Exception {
 
 			try{
-				clickaction(label);
+				clickbutton(label);
 				ExtentManager.pass("User is able to Perform a  click  on  the "  + label +  " button  ");
 			}
 			catch (Exception e)

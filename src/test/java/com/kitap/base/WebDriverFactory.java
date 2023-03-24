@@ -85,6 +85,7 @@ public class WebDriverFactory {
 			options.merge(capabilities);      			
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(options);
+
 		
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			DesiredCapabilities capabilities = new DesiredCapabilities();

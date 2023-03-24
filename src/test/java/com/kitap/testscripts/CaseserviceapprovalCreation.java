@@ -39,7 +39,7 @@ public class CaseserviceapprovalCreation extends BaseTest {
         casesserviceapproval.submit("Submit");
       //  casesserviceapproval.scrolling();
         casesserviceapproval.clickapprovalhistory("Approval History");
-        casesserviceapproval.clickapprover("Eithne Shimasaki");        
+        casesserviceapproval.clickapprover("Satoru Akatsu");        
         casesserviceapproval.clickuserdetail("User Detail");   
         Thread.sleep(5000);
         casesserviceapproval.clicklogin();
@@ -49,7 +49,7 @@ public class CaseserviceapprovalCreation extends BaseTest {
         casesserviceapproval.clickapprovalstatus("Approve");
         casesserviceapproval.entercomments("Comments","approving the request");
         casesserviceapproval.Approve("Approve");
-        casesserviceapproval.clicklogout("Log out as Eithne Shimasaki");
+        casesserviceapproval.clicklogout("Log out as Satoru Akatsu");
         
         
 

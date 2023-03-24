@@ -1,5 +1,5 @@
 package com.kitap.pageobjects;
-import org.openqa.selenium.By; 
+import org.openqa.selenium.By;  
   
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -68,7 +68,7 @@ public class CasesWarranty extends SFPageBase {
 
 		try{
 			
-			setinput(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 			
 		}
@@ -121,7 +121,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setreason(String label,String data) throws Exception {
 
 		try {
-			settext(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -134,7 +134,7 @@ public class CasesWarranty extends SFPageBase {
 	public void selectcaseorigin(String label,String data) throws Exception {
 
 		try {
-			selectdropdown(label, data);
+			selectOption(label, data);
 			ExtentManager.pass("User is  able to  select the type---- "  +  data  +  "  from dropdown options in the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -147,7 +147,7 @@ public class CasesWarranty extends SFPageBase {
 	public void selectpriority(String label,String data) throws Exception {
 
 		try {
-			selectdropdown(label, data);
+			selectOption(label, data);
 			ExtentManager.pass("User is  able to  select the type---- "  +  data  +  "  from dropdown options in the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -172,7 +172,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setemail(String label,String data) throws Exception {
 
 		try{
-			settext1(label,data);
+			setText(label,data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -185,7 +185,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setdeffectivemodel(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -199,7 +199,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setdeffectiveserial(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -213,7 +213,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setreplaceserial(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -227,7 +227,7 @@ public class CasesWarranty extends SFPageBase {
 	public void sethoursrequested(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -240,7 +240,7 @@ public class CasesWarranty extends SFPageBase {
 	public void sethoursapproval(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -253,7 +253,7 @@ public class CasesWarranty extends SFPageBase {
 	public void labouramountreq(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -266,7 +266,7 @@ public class CasesWarranty extends SFPageBase {
 	public void labouramountapproval(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -279,7 +279,7 @@ public class CasesWarranty extends SFPageBase {
 	public void daikinpartamountrequest(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -292,7 +292,7 @@ public class CasesWarranty extends SFPageBase {
 	public void daikinpartamountapproved(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -305,7 +305,7 @@ public class CasesWarranty extends SFPageBase {
 	public void subcontractamountrequest(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -318,7 +318,7 @@ public class CasesWarranty extends SFPageBase {
 	public void subcontractamountapproved(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -331,7 +331,7 @@ public class CasesWarranty extends SFPageBase {
 	public void materialsamountrequest(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -344,7 +344,7 @@ public class CasesWarranty extends SFPageBase {
 	public void materialsamountapproved(String label,String data) throws Exception {
 
 		try {
-			settext1(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -357,7 +357,7 @@ public class CasesWarranty extends SFPageBase {
 	public void selectapprovalstatus(String label,String data) throws Exception {
 
 		try {
-			selectdropdown(label, data);
+			selectOption(label, data);
 			ExtentManager.pass("User is  able to  select the type---- "  +  data  +  "  from dropdown options in the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -370,7 +370,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setwarrantyapproved(String label,String data) throws Exception {
 
 		try{
-			settext1(label,data);
+			setText(label,data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -383,7 +383,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setwarrantyrequested(String label,String data) throws Exception {
 
 		try{
-			settext1(label,data);
+			setText(label,data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -396,7 +396,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setconcessionapproved(String label,String data) throws Exception {
 
 		try{
-			settext1(label,data);
+			setText(label,data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -409,7 +409,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setconcessionrequested(String label,String data) throws Exception {
 
 		try{
-			settext1(label,data);
+			setText(label,data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -422,7 +422,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setfailureresolution(String label,String data) throws Exception {
 
 		try {
-			settext(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to send  the "  +  data  +  " in the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -435,7 +435,7 @@ public class CasesWarranty extends SFPageBase {
 	public void selectclosedreason(String label,String data) throws Exception {
 
 		try {
-			selectdropdown(label, data);
+			selectOption(label, data);
 			ExtentManager.pass("User is  able to  select the type---- "  +  data  +  "  from dropdown options in the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -449,7 +449,7 @@ public class CasesWarranty extends SFPageBase {
 
 		try{
 			
-			settext(label, data);
+			setText(label, data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 			
 		}
@@ -463,7 +463,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setAPnumber(String label,String data) throws Exception {
 
 		try{
-			settext1(label,data);
+			setText(label,data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -476,7 +476,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setAPamount(String label,String data) throws Exception {
 
 		try{
-			settext1(label,data);
+			setText(label,data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -489,7 +489,7 @@ public class CasesWarranty extends SFPageBase {
 	public void setAPcreatedate(String label,String data) throws Exception {
 
 		try{
-			settext1(label,data);
+			setText(label,data);
 			ExtentManager.pass("User is able to  send the ----> "  +  data  +  "  in  the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -502,7 +502,7 @@ public class CasesWarranty extends SFPageBase {
 	public void selectstatus(String label,String data) throws Exception {
 
 		try {
-			selectdropdown(label, data);
+			selectOption(label, data);
 			ExtentManager.pass("User is  able to  select the type---- "  +  data  +  "  from dropdown options in the " + label +  " field" );
 		}
 		catch (Exception e)
@@ -528,7 +528,7 @@ public class CasesWarranty extends SFPageBase {
 	public void clicksave(String label) throws Exception {
 
 		try{
-			click(label);
+			clickbutton(label);
 			ExtentManager.pass("User is able to Perform a  click  on  the "  + label +  " button  ");
 			
 		}

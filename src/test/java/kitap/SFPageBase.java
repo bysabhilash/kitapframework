@@ -359,6 +359,7 @@ public class SFPageBase  {
 						we = driver.findElement(By.xpath("//*[@id=string(//label[text()='" + label + "']/@for)]"));
 						 highlightelement(we);
 						we.sendKeys(targetvalue);
+						System.out.println("Sent values as " + targetvalue);
 					//	we.sendKeys(Keys.ENTER);
 		//				ExtentManager.pass("Have successfully "  +   targetvalue   +   " was sent to the "  +  label  +   " field" );
 					}
@@ -420,14 +421,16 @@ public class SFPageBase  {
 				if (!label.isEmpty()) {
 					try {
 						
-						we = driver.findElement(By.xpath("//div[@class='actionsContainer']//following::a//div[text()='" + label + "']"));
+						//we = driver.findElement(By.xpath("//div[@class='actionsContainer']//following::a//div[text()='" + label + "']"));
+						we = driver.findElement(By.xpath("//div[text()='" + label + "']"));
 						we.click();
-						 
+						waitForSFPagetoLoad();					 
 						System.out.println("Sent values as ");
 		//				ExtentManager.pass("Have successfully clicked the "  +  label   );
 	
 					} catch (Exception e) {
-						we = driver.findElement(By.xpath("//div[text()='" + label + "']"));
+						we = driver.findElement(By.xpath("//div[@class='actionsContainer']//following::a//div[text()='" + label + "']"));
+					//	we = driver.findElement(By.xpath("//div[text()='" + label + "']"));
 						we.click();
 						
 						System.out.println("Sent values as ");
@@ -587,21 +590,20 @@ public class SFPageBase  {
 		 */
 		public void settext1(String label, String targetvalue) throws Exception {
 			WebElement we;
-			
+			//label[text()='" + label + "']//following::textarea
 				try {
 					
 						try {
-							we = driver.findElement(By.xpath("//span[text()='" + label + "']//following::input[1]"));
+							we = driver.findElement(By.xpath("//label[text()='" + label + "']//following::input[1]"));
 							 highlightelement(we);
 							we.sendKeys(targetvalue);
 							System.out.println("Sent values as " + targetvalue);
 					//		ExtentManager.pass("Have successfully "  +   targetvalue   +   " was sent to the"  +  label  +   " field" );
 						} catch (Exception e) {
-							we = driver.findElement(By.xpath("//span[text()='" + label + "']//following::textarea"));
+							we = driver.findElement(By.xpath("//label[text()='" + label + "']//following::textarea"));
 							 highlightelement(we);
 							we.sendKeys(targetvalue);
-						    
-							we.sendKeys(Keys.ENTER);
+							System.out.println("Sent values as " + targetvalue);
 					//		ExtentManager.pass("Have successfully "  +   targetvalue   +   " was sent to the"  +  label  +   " field" );
 						}
 	
@@ -630,13 +632,12 @@ public class SFPageBase  {
 		  try { 
 		  if(!label.isEmpty()) { 
 		  try { 
-		    we = driver.findElement(By.xpath("//label[text()='" + label +"']//following::button[1]"));  
-			we.click(); 		  
-		    
+		   we = driver.findElement(By.xpath("//label[text()='" + label +"']//following::button[1]"));  
+			we.click(); 		  		    
 		    we2=driver.findElement(By.xpath("(//span[text()='" + targetvalue +"'])[1]"));
 		    we2.click();
 	        System.out.println("Sent values as " + targetvalue);
-	    //    ExtentManager.pass("Have successfully"  +   targetvalue   +   " was selected to the"  +  label  +   "field" );
+	        ExtentManager.pass("Have successfully"  +   targetvalue   +   " was selected to the"  +  label  +   "field" );
 	        
 	        
 		  } 
@@ -679,7 +680,6 @@ public class SFPageBase  {
 		    we.click();
 		    highlightelement(we);
 			we.sendKeys(targetvalue);	
-			waitForSFPagetoLoad();   
 			we.sendKeys(Keys.DOWN);
 			we.sendKeys(Keys.ENTER);
 	        System.out.println("Sent values as " + targetvalue); 
@@ -689,9 +689,10 @@ public class SFPageBase  {
 			  we = driver.findElement(By.xpath("//input[@id=string(//label[text()='" + label + "']/@for)]")); 
 			  highlightelement(we);
 				we.sendKeys(targetvalue);
-				waitForSFPagetoLoad(); 
+				Thread.sleep(4000);
 				we.sendKeys(Keys.DOWN);
-				we.sendKeys(Keys.ENTER);				  
+				we.sendKeys(Keys.DOWN);
+				we.sendKeys(Keys.ENTER);
 		        System.out.println("Sent values as " + targetvalue);
 		      //  ExtentManager.pass("Have successfully "  +   targetvalue   +   " was selected to the "  +  label  +   " field" );
 			   
@@ -818,6 +819,10 @@ public class SFPageBase  {
 							we.sendKeys(Keys.ENTER);
 						//	ExtentManager.pass("Have successfully "  +   targetvalue   +   " was sent  to the "  +  label  +   " field" );
 						} catch (Exception e) {
+							we = driver.findElement(By.xpath("//legend[text()='" + label + "']//following::input[1]"));
+							 highlightelement(we);
+							we.sendKeys(targetvalue);
+							System.out.println("Sent values as " + targetvalue);
 							
 						}
 	
@@ -875,9 +880,9 @@ public class SFPageBase  {
 					
 					try {
 						we = driver.findElement(By.xpath("(//span[text()='" + label + "']//following::span[contains(text(),01)])[1]"));
-						we2=driver.findElement(By.xpath("//li//a[text()='Asset Warranty Info']"));
-						((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", we2);
-						Thread.sleep(500); 
+				//		we2=driver.findElement(By.xpath("//li//a[text()='Asset Warranty Info']"));
+				//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", we2);
+				//		Thread.sleep(500); 
 						highlightelement(we);					
 						we.click();
 						System.out.println("Sent values as ");
@@ -1254,6 +1259,7 @@ public  void status1(WebElement ele) throws Throwable {
 				        we = driver.findElement(By.xpath("//button[text()='" + label + "']"));	
 						highlightelement(we);
 						we.click();
+						waitForSFPagetoLoad();
 						System.out.println("Sent values as ");
 				            break;
 						}        
